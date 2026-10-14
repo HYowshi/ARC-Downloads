@@ -13,20 +13,30 @@ const platforms = [
   ["macOS", "ARC-macOS-test.zip", "Bản thử nghiệm chưa notarize."],
   ["iOS", null, "Chờ IPA hợp lệ; build unsigned chưa thể cài trực tiếp."],
 ];
-fetch("https://api.github.com/repos/HYowshi/ARC-Downloads/releases/latest")
-  .then((r) => {
-    if (!r.ok) throw Error();
-    return r.json();
-  })
-  .then(render)
-  .catch(() => render(null));
+async function loadDownloads() {
+  const results = await Promise.allSettled([
+    fetch(
+      "https://api.github.com/repos/HYowshi/ARC-Downloads/releases/latest",
+    ).then(readJson),
+    fetch("assets/qr-release.json").then(readJson),
+  ]);
+  render(
+    results[0].status === "fulfilled" ? results[0].value : null,
+    results[1].status === "fulfilled" ? results[1].value : null,
+  );
+}
+function readJson(response) {
+  if (!response.ok) throw new Error("Không tải được danh sách");
+  return response.json();
+}
+loadDownloads();
 function el(tag, text, cls) {
   const n = document.createElement(tag);
   if (text) n.textContent = text;
   if (cls) n.className = cls;
   return n;
 }
-function render(release) {
+function render(release, qrManifest) {
   document.getElementById("status").textContent = release
     ? "Bản thử nghiệm hiện tại: " + release.tag_name
     : "Chưa tải được danh sách. Kiểm tra tại mục Releases.";
@@ -47,7 +57,10 @@ function render(release) {
       const a = el("a", "Tải trực tiếp ↗", "download");
       a.href = asset.browser_download_url;
       card.append(a, el("p", (asset.size / 1048576).toFixed(1) + " MB"));
-      if (release.tag_name === "v1.0.0-test") {
+      if (
+        release.tag_name === qrManifest?.release &&
+        qrManifest.assets?.[name] === asset.browser_download_url
+      ) {
         const b = el("button", "Hiện QR tải", "qr-button");
         b.type = "button";
         b.setAttribute("aria-expanded", "false");

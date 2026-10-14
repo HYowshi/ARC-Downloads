@@ -17,6 +17,12 @@
 
 QR mở đúng đường dẫn tải. QR không tự cấp quyền cài đặt và không vượt qua cơ chế bảo vệ hệ điều hành.
 
+## Cập nhật trang tải
+
+Trang gồm `index.html`, `styles.css`, `app.js`; tự đọc bản phát hành mới nhất từ GitHub.
+Khi xuất bản bản mới, chạy `python tool/generate_release_qr.py <tag>` với thư viện trong `tool/requirements.txt`.
+Commit ảnh QR và `assets/qr-release.json` cùng nhau. Trang chỉ hiện QR khi tag và đường dẫn khớp release, tránh tải nhầm bản cũ.
+
 Chỉ tải từ repo này; kiểm tra SHA-256 đính kèm mỗi release. Không có API key, mật khẩu hoặc dữ liệu thành viên trong repo tải.
 
 ## Điều khoản và quyền riêng tư

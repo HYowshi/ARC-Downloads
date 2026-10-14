@@ -1,0 +1,8 @@
+{
+  "release": "v1.0.0-test.2",
+  "assets": {
+    "Android": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.0-test.2/ARC-Android-test.apk",
+    "Windows": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.0-test.2/ARC-Windows-test.zip",
+    "macOS": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.0-test.2/ARC-macOS-test.zip"
+  }
+}
