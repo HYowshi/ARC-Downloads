@@ -35,9 +35,9 @@ Hiệu ứng tab trượt, mở ảnh lớn, thẻ xuất hiện và phản hồ
 
 ARC dùng hồ sơ CLB, lịch, điểm danh, góp ý và minh chứng đóng quỹ. Camera phục vụ quét QR; vị trí phục vụ điểm danh; ảnh được chọn để gửi minh chứng hoặc quản trị avatar. Quyền từ chối vẫn được hệ điều hành tôn trọng. QR ngân hàng không chứng minh giao dịch hoàn tất; thành viên gửi minh chứng sau khi chuyển khoản.
 
-Dữ liệu do BCN/Admin quản lý. Liên hệ BCN để sửa hồ sơ, hỏi thời gian lưu trữ hoặc yêu cầu xử lý dữ liệu. Không công bố hồ sơ pháp lý được chứng nhận khi chưa có đơn vị chịu trách nhiệm và chính sách lưu trữ được phê duyệt.
+Dữ liệu do BCN/Admin quản lý. Liên hệ BCN để sửa hồ sơ hoặc đầu mối hỗ trợ bên dưới để yêu cầu xử lý dữ liệu. Chính sách lưu trữ do chủ dự án cung cấp; trang này không tuyên bố ứng dụng đã được cơ quan nào chứng nhận pháp lý.
 
-Trước phát hành chính thức cần: người/đơn vị chịu trách nhiệm, email hỗ trợ, thời hạn lưu và xóa dữ liệu, cơ sở sử dụng logo, quyền sử dụng chứng chỉ ký, chính sách quyền riêng tư được CLB phê duyệt. Các thông tin này không được tự bịa hoặc thay bằng chứng chỉ của tổ chức khác.
+Trước phát hành chính thức cần CLB phê duyệt chính sách, xác nhận quyền dùng logo và hoàn tất chữ ký phân phối phù hợp với ARC. Quyền dùng chứng chỉ do chủ sở hữu cho phép không thay thế yêu cầu bundle ID, provisioning hoặc APNs của iOS.
 
 ## Đầu mối dữ liệu và hỗ trợ
 
