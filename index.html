@@ -1,7 +1,161 @@
 <!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="ARC — ứng dụng nội bộ CLB AI-Robotics, trực thuộc DNTU. Lịch, điểm danh và đóng quỹ."><title>ARC · Kết nối CLB AI-Robotics</title><link rel="icon" href="assets/arc.png"><link rel="stylesheet" href="styles.css"></head>
-<body><nav class="wrap nav"><a class="brand" href="#"><img src="assets/arc.png" alt="Logo ARC">ARC</a><div><a href="#features">Khám phá</a><a href="#downloads">Tải ARC</a></div></nav><main>
-<section class="wrap hero"><div><p class="eyebrow">CLB AI-ROBOTICS · TRỰC THUỘC DNTU</p><h1>Mọi hoạt động CLB.<br><span>Trong một ARC.</span></h1><p class="lead">Lịch hoạt động, đăng ký trực, điểm danh và đóng quỹ. Một nơi để thành viên theo dõi và cùng nhau xây dựng CLB.</p><div class="actions"><a class="primary" href="#downloads">Tải ứng dụng ↗</a><a class="secondary" href="#features">Khám phá chức năng</a></div><p class="small">Ứng dụng nội bộ. Tài khoản được BCN/Admin cấp cho thành viên.</p></div><div class="visual"><div class="orb"></div><div class="phone" aria-label="Minh họa chức năng ARC"><div class="speaker"></div><div class="phone-top"><img src="assets/arc.png" alt=""><span>Xin chào,<br><strong>thành viên ARC</strong></span></div><div class="schedule"><span class="eyebrow">CÙNG NHAU THAM GIA</span><h3>Lịch CLB của bạn</h3><p>Theo dõi hoạt động<br>và đăng ký buổi trực.</p><div class="days"><span>Th 2</span><span>Th 3</span><span class="selected">Th 4</span><span>Th 5</span><span>Th 6</span></div></div><div class="mini-grid"><div>◷<strong>Lịch</strong></div><div>▦<strong>Điểm danh</strong></div><div>↗<strong>Đóng quỹ</strong></div><div>◎<strong>Hồ sơ</strong></div></div><p class="phone-note">ARC · Kết nối và đồng hành</p></div><div class="floating">Một CLB. Một kết nối.</div></div></section>
-<section class="wrap features" id="features"><p class="eyebrow">THIẾT KẾ CHO THÀNH VIÊN</p><h2>Việc của CLB, rõ ràng hơn.</h2><div class="feature-grid"><article><span>01</span><h3>Chủ động với lịch</h3><p>Xem ngày, tuần, tháng. Đăng ký sự kiện, buổi trực và xem những người cùng trực.</p></article><article><span>02</span><h3>Điểm danh tại CLB</h3><p>Quét QR hoặc nhập PIN. Vị trí được kiểm tra trong cả hai cách điểm danh.</p></article><article><span>03</span><h3>Đóng quỹ rõ ràng</h3><p>QR theo số tiền và nội dung của bạn. Gửi minh chứng cho tháng hiện tại hoặc tháng cần đóng bù.</p></article><article><span>04</span><h3>Thông tin trong tầm tay</h3><p>Hồ sơ, quy định CLB và hòm góp ý. BCN quản lý tập trung trong giao diện riêng.</p></article></div></section>
-<section class="download-section" id="downloads"><div class="wrap"><p class="eyebrow">CHỌN NỀN TẢNG CỦA BẠN</p><h2>Mang ARC theo bên mình.</h2><p id="status" role="status">Đang kiểm tra bản tải mới nhất…</p><div class="grid" id="downloads-list"></div><p class="small">QR mở liên kết tải. Bạn cần xác nhận cài đặt trên thiết bị; website không thể tự cài ứng dụng.</p><a href="https://github.com/HYowshi/ARC-Downloads/releases">Các bản phát hành và SHA-256 ↗</a></div></section>
-<section class="wrap trust"><article><p class="eyebrow">TRƯỚC KHI CÀI ĐẶT</p><h2>Biết rõ bản bạn tải.</h2><p>ARC hiện phát hành dưới dạng thử nghiệm. Android, Windows và macOS chưa có đầy đủ chữ ký phân phối. iOS cần IPA đã ký và provisioning hợp lệ trước khi có thể cài.</p><p>Tải từ các liên kết chính thức tại đây và đối chiếu SHA-256 trong release. Không tắt bảo vệ thiết bị để cài app.</p></article><article><p class="eyebrow">HỖ TRỢ THÀNH VIÊN</p><h2>Cần hỗ trợ?</h2><p>Đầu mối phụ trách: Harashi Yowshi.</p><a href="mailto:HarashiYowshi@gmail.com">HarashiYowshi@gmail.com ↗</a><p>Dữ liệu lưu không thời hạn; yêu cầu xóa được xác minh và xử lý qua đầu mối hỗ trợ.</p><a href="https://github.com/HYowshi/ARC-Downloads#điều-khoản-và-quyền-riêng-tư">Điều khoản và quyền riêng tư</a></article></section></main><footer class="wrap"><strong>ARC</strong><span>CLB AI-Robotics · Trực thuộc DNTU</span><a href="https://github.com/HYowshi/ARC-Downloads">GitHub ↗</a></footer><script src="app.js" defer></script></body></html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="ARC — ứng dụng nội bộ CLB AI-Robotics, trực thuộc DNTU. Lịch, điểm danh và đóng quỹ."
+    />
+    <title>ARC · Kết nối CLB AI-Robotics</title>
+    <link rel="icon" href="assets/arc.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="wrap nav">
+      <a class="brand" href="#"
+        ><img src="assets/arc.png" alt="Logo ARC" />ARC</a
+      >
+      <div>
+        <a href="#features">Khám phá</a><a href="#downloads">Tải ARC</a>
+      </div>
+    </nav>
+    <main>
+      <section class="wrap hero">
+        <div>
+          <p class="eyebrow">CLB AI-ROBOTICS · TRỰC THUỘC DNTU</p>
+          <h1>Mọi hoạt động CLB.<br /><span>Trong một ARC.</span></h1>
+          <p class="lead">
+            Lịch hoạt động, đăng ký trực, điểm danh và đóng quỹ. Một nơi để
+            thành viên theo dõi và cùng nhau xây dựng CLB.
+          </p>
+          <div class="actions">
+            <a class="primary" href="#downloads">Tải ứng dụng ↗</a
+            ><a class="secondary" href="#features">Khám phá chức năng</a>
+          </div>
+          <p class="small">
+            Ứng dụng nội bộ. Tài khoản được BCN/Admin cấp cho thành viên.
+          </p>
+        </div>
+        <div class="visual">
+          <div class="orb"></div>
+          <div class="phone" aria-label="Minh họa chức năng ARC">
+            <div class="speaker"></div>
+            <div class="phone-top">
+              <img src="assets/arc.png" alt="" /><span
+                >Xin chào,<br /><strong>thành viên ARC</strong></span
+              >
+            </div>
+            <div class="schedule">
+              <span class="eyebrow">CÙNG NHAU THAM GIA</span>
+              <h3>Lịch CLB của bạn</h3>
+              <p>Theo dõi hoạt động<br />và đăng ký buổi trực.</p>
+              <div class="days">
+                <span>Th 2</span><span>Th 3</span
+                ><span class="selected">Th 4</span><span>Th 5</span
+                ><span>Th 6</span>
+              </div>
+            </div>
+            <div class="mini-grid">
+              <div>◷<strong>Lịch</strong></div>
+              <div>▦<strong>Điểm danh</strong></div>
+              <div>↗<strong>Đóng quỹ</strong></div>
+              <div>◎<strong>Hồ sơ</strong></div>
+            </div>
+            <p class="phone-note">ARC · Kết nối và đồng hành</p>
+          </div>
+          <div class="floating">Một CLB. Một kết nối.</div>
+        </div>
+      </section>
+      <section class="wrap features" id="features">
+        <p class="eyebrow">THIẾT KẾ CHO THÀNH VIÊN</p>
+        <h2>Việc của CLB, rõ ràng hơn.</h2>
+        <div class="feature-grid">
+          <article>
+            <span>01</span>
+            <h3>Chủ động với lịch</h3>
+            <p>
+              Xem ngày, tuần, tháng. Đăng ký sự kiện, buổi trực và xem những
+              người cùng trực.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Điểm danh tại CLB</h3>
+            <p>
+              Quét QR hoặc nhập PIN. Vị trí được kiểm tra trong cả hai cách điểm
+              danh.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Đóng quỹ rõ ràng</h3>
+            <p>
+              QR theo số tiền và nội dung của bạn. Gửi minh chứng cho tháng hiện
+              tại hoặc tháng cần đóng bù.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Thông tin trong tầm tay</h3>
+            <p>
+              Hồ sơ, quy định CLB và hòm góp ý. BCN quản lý tập trung trong giao
+              diện riêng.
+            </p>
+          </article>
+        </div>
+      </section>
+      <section class="download-section" id="downloads">
+        <div class="wrap">
+          <p class="eyebrow">CHỌN NỀN TẢNG CỦA BẠN</p>
+          <h2>Mang ARC theo bên mình.</h2>
+          <p id="status" role="status">Đang kiểm tra bản tải mới nhất…</p>
+          <div class="grid" id="downloads-list"></div>
+          <p class="small">
+            QR mở liên kết tải. Bạn cần xác nhận cài đặt trên thiết bị; website
+            không thể tự cài ứng dụng.
+          </p>
+          <a href="https://github.com/HYowshi/ARC-Downloads/releases"
+            >Các bản phát hành và SHA-256 ↗</a
+          >
+        </div>
+      </section>
+      <section class="wrap trust">
+        <article>
+          <p class="eyebrow">TRƯỚC KHI CÀI ĐẶT</p>
+          <h2>Biết rõ bản bạn tải.</h2>
+          <p>
+            ARC hiện phát hành dưới dạng thử nghiệm. Android, Windows và macOS
+            chưa có đầy đủ chữ ký phân phối. iOS cần IPA đã ký và provisioning
+            hợp lệ trước khi có thể cài.
+          </p>
+          <p>
+            Tải từ các liên kết chính thức tại đây và đối chiếu SHA-256 trong
+            release. Không tắt bảo vệ thiết bị để cài app.
+          </p>
+        </article>
+        <article>
+          <p class="eyebrow">HỖ TRỢ THÀNH VIÊN</p>
+          <h2>Cần hỗ trợ?</h2>
+          <p>Đầu mối phụ trách: Harashi Yowshi.</p>
+          <a href="mailto:HarashiYowshi@gmail.com"
+            >HarashiYowshi@gmail.com ↗</a
+          >
+          <p>
+            Dữ liệu lưu không thời hạn; yêu cầu xóa được xác minh và xử lý qua
+            đầu mối hỗ trợ.
+          </p>
+          <a
+            href="https://github.com/HYowshi/ARC-Downloads#điều-khoản-và-quyền-riêng-tư"
+            >Điều khoản và quyền riêng tư</a
+          >
+        </article>
+      </section>
+    </main>
+    <footer class="wrap">
+      <strong>ARC</strong><span>CLB AI-Robotics · Trực thuộc DNTU</span
+      ><a href="https://github.com/HYowshi/ARC-Downloads">GitHub ↗</a>
+    </footer>
+    <script src="app.js" defer></script>
+  </body>
+</html>
