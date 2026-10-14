@@ -8,12 +8,14 @@
 
 ## Nền tảng
 
-| Nền tảng | Trạng thái |
-| --- | --- |
-| Android | APK thử nghiệm, ký debug; cần người dùng xác nhận cài đặt. |
-| Windows | Bản portable thử nghiệm, chưa ký Authenticode. |
-| macOS | Bản thử nghiệm chưa notarize; không cam kết Gatekeeper tin cậy. |
-| iOS | Build unsigned chưa cài được trực tiếp; chờ chứng chỉ/provisioning hợp lệ cho ARC. |
+**Bản hiện tại: `v1.0.0-test.3`** · [Ghi chú và SHA-256](https://github.com/HYowshi/ARC-Downloads/releases/tag/v1.0.0-test.3)
+
+| Nền tảng | Trạng thái | Tải trực tiếp | QR tải |
+| --- | --- | --- | --- |
+| Android | APK thử nghiệm, ký debug; xác nhận cài đặt trên thiết bị. | [Tải APK](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.0-test.3/ARC-Android-test.apk) | <img src="assets/qr-android.png" width="120" alt="QR tải APK test.3"> |
+| Windows | Bản portable thử nghiệm, chưa ký Authenticode. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.0-test.3/ARC-Windows-test.zip) | <img src="assets/qr-windows.png" width="120" alt="QR tải Windows test.3"> |
+| macOS | Bản thử nghiệm chưa notarize. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.0-test.3/ARC-macOS-test.zip) | <img src="assets/qr-macos.png" width="120" alt="QR tải macOS test.3"> |
+| iOS | Build unsigned chưa cài được trực tiếp; chờ chứng chỉ/provisioning hợp lệ cho ARC. | Chưa có IPA | — |
 
 QR mở đúng đường dẫn tải. QR không tự cấp quyền cài đặt và không vượt qua cơ chế bảo vệ hệ điều hành.
 
