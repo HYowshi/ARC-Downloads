@@ -10,6 +10,12 @@
     <title>ARC · Kết nối CLB AI-Robotics</title>
     <link rel="icon" href="assets/arc.png" />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("arc-download-theme") || "dark";
+      } catch {}
+    </script>
   </head>
   <body>
     <nav class="wrap nav">
@@ -17,7 +23,23 @@
         ><img src="assets/arc.png" alt="Logo ARC" />ARC</a
       >
       <div>
-        <a href="#features">Khám phá</a><a href="#downloads">Tải ARC</a>
+        <a href="#features" class="nav-explore">Khám phá</a
+        ><a href="#showcase">Ảnh app</a><a href="#downloads">Tải ARC</a>
+        <button
+          id="theme-toggle"
+          class="icon-button"
+          aria-label="Đổi giao diện sáng tối"
+          type="button"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M20 15.5A8.5 8.5 0 0 1 8.5 4 8.5 8.5 0 1 0 20 15.5Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+            />
+          </svg>
+        </button>
       </div>
     </nav>
     <main>
@@ -31,40 +53,114 @@
           </p>
           <div class="actions">
             <a class="primary" href="#downloads">Tải ứng dụng ↗</a
-            ><a class="secondary" href="#features">Khám phá chức năng</a>
+            ><a class="secondary" href="#showcase">Xem app thực tế</a>
           </div>
           <p class="small">
             Ứng dụng nội bộ. Tài khoản được BCN/Admin cấp cho thành viên.
           </p>
         </div>
-        <div class="visual">
+        <div class="visual" data-tilt>
           <div class="orb"></div>
-          <div class="phone" aria-label="Minh họa chức năng ARC">
-            <div class="speaker"></div>
-            <div class="phone-top">
-              <img src="assets/arc.png" alt="" /><span
-                >Xin chào,<br /><strong>thành viên ARC</strong></span
-              >
-            </div>
-            <div class="schedule">
-              <span class="eyebrow">CÙNG NHAU THAM GIA</span>
-              <h3>Lịch CLB của bạn</h3>
-              <p>Theo dõi hoạt động<br />và đăng ký buổi trực.</p>
-              <div class="days">
-                <span>Th 2</span><span>Th 3</span
-                ><span class="selected">Th 4</span><span>Th 5</span
-                ><span>Th 6</span>
-              </div>
-            </div>
-            <div class="mini-grid">
-              <div>◷<strong>Lịch</strong></div>
-              <div>▦<strong>Điểm danh</strong></div>
-              <div>↗<strong>Đóng quỹ</strong></div>
-              <div>◎<strong>Hồ sơ</strong></div>
-            </div>
-            <p class="phone-note">ARC · Kết nối và đồng hành</p>
+          <figure class="hero-device back-device">
+            <img
+              src="assets/screenshots/calendar-light.png"
+              width="390"
+              height="844"
+              alt="Lịch tháng trong ARC, ảnh chụp từ app đang chạy"
+              decoding="async"
+            />
+          </figure>
+          <figure class="hero-device front-device">
+            <img
+              id="hero-shot"
+              src="assets/screenshots/home-dark.png"
+              width="390"
+              height="844"
+              alt="Trang chủ ARC trên giao diện điện thoại, ảnh chụp thực tế"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
+          <div class="capture-label">
+            <span class="live-dot"></span>Ảnh chụp từ ARC đang chạy
           </div>
-          <div class="floating">Một CLB. Một kết nối.</div>
+        </div>
+      </section>
+      <section class="wrap showcase" id="showcase">
+        <div class="section-heading reveal">
+          <p class="eyebrow">XEM TRƯỚC ARC</p>
+          <h2>Giao diện thực. Trải nghiệm rõ ràng.</h2>
+          <p>
+            Ảnh chụp trực tiếp từ client kết nối API của CLB. Chọn một màn hình
+            rồi nhấn ảnh để xem lớn.
+          </p>
+        </div>
+        <div class="shot-tabs" role="tablist" aria-label="Màn hình ARC">
+          <span class="tab-indicator" aria-hidden="true"></span>
+          <button
+            role="tab"
+            id="shot-home"
+            aria-selected="true"
+            aria-controls="shot-panel"
+            data-shot="home"
+            type="button"
+          >
+            Trang chủ
+          </button>
+          <button
+            role="tab"
+            id="shot-calendar"
+            aria-selected="false"
+            aria-controls="shot-panel"
+            data-shot="calendar"
+            tabindex="-1"
+            type="button"
+          >
+            Lịch mobile
+          </button>
+          <button
+            role="tab"
+            id="shot-desktop"
+            aria-selected="false"
+            aria-controls="shot-panel"
+            data-shot="desktop"
+            tabindex="-1"
+            type="button"
+          >
+            Lịch PC
+          </button>
+        </div>
+        <div
+          id="shot-panel"
+          role="tabpanel"
+          aria-labelledby="shot-home"
+          class="shot-panel"
+        >
+          <div class="shot-description">
+            <span id="shot-number" class="eyebrow">01 / 03</span>
+            <h3 id="shot-title">Các chức năng trong tầm tay</h3>
+            <p id="shot-description">
+              Trang chủ phân bố theo vai trò. Thành viên và BCN/Admin có các
+              chức năng phù hợp với tài khoản.
+            </p>
+            <span class="capture-note">Chụp từ ARC · 14/10/2026</span>
+          </div>
+          <button
+            id="open-screenshot"
+            class="screen-preview"
+            aria-label="Mở ảnh Trang chủ ARC"
+            type="button"
+          >
+            <img
+              id="gallery-shot"
+              src="assets/screenshots/home-dark.png"
+              alt="Trang chủ ARC, ảnh chụp thực tế"
+              width="390"
+              height="844"
+              loading="lazy"
+              decoding="async"
+            /><span>Xem ảnh lớn ↗</span>
+          </button>
         </div>
       </section>
       <section class="wrap features" id="features">
@@ -104,6 +200,60 @@
             </p>
           </article>
         </div>
+      </section>
+      <section class="wrap faq" id="guide">
+        <div class="section-heading reveal">
+          <p class="eyebrow">BẮT ĐẦU VỚI ARC</p>
+          <h2>Một vài điều trước khi tải.</h2>
+        </div>
+        <article class="faq-item">
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-controls="faq-account"
+          >
+            Ai có thể sử dụng ARC?<span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-account" aria-hidden="true">
+            <div>
+              <p>
+                ARC dành cho thành viên CLB AI-Robotics. BCN/Admin tạo tài khoản
+                và cấp thông tin đăng nhập; ứng dụng không mở đăng ký tự do.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="faq-item">
+          <button
+            type="button"
+            aria-expanded="false"
+            aria-controls="faq-install"
+          >
+            Quét QR có tự cài app không?<span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-install" aria-hidden="true">
+            <div>
+              <p>
+                QR mở đúng liên kết tải của nền tảng. Sau khi tải, bạn xác nhận
+                cài đặt theo hướng dẫn của hệ điều hành. Windows cần giải nén,
+                rồi chạy ARC.exe.
+              </p>
+            </div>
+          </div>
+        </article>
+        <article class="faq-item">
+          <button type="button" aria-expanded="false" aria-controls="faq-ios">
+            Khi nào có bản iOS?<span aria-hidden="true">+</span>
+          </button>
+          <div class="faq-panel" id="faq-ios" aria-hidden="true">
+            <div>
+              <p>
+                Bản iOS đã build nhưng chưa có IPA được ký với provisioning phù
+                hợp cho ARC. Trang sẽ bổ sung liên kết khi có bản cài hợp lệ.
+              </p>
+            </div>
+          </div>
+        </article>
       </section>
       <section class="download-section" id="downloads">
         <div class="wrap">
@@ -153,9 +303,27 @@
       </section>
     </main>
     <footer class="wrap">
-      <strong>ARC</strong><span>CLB AI-Robotics · Trực thuộc DNTU</span
-      ><a href="https://github.com/HYowshi/ARC-Downloads">GitHub ↗</a>
+      <strong>ARC</strong><span>CLB AI-Robotics · Trực thuộc DNTU</span>
+      <div>
+        <a href="https://github.com/HYowshi/ARC-Downloads">GitHub ↗</a
+        ><a class="credits" href="https://fontawesome.com/license/free"
+          >Icons: Font Awesome</a
+        >
+      </div>
     </footer>
     <script src="app.js" defer></script>
+    <script src="experience.js" defer></script>
+    <dialog id="screenshot-dialog" aria-label="Ảnh giao diện ARC">
+      <div class="viewer">
+        <button
+          id="close-screenshot"
+          class="icon-button"
+          type="button"
+          aria-label="Đóng ảnh"
+        >
+          ✕</button
+        ><img id="large-shot" alt="Ảnh giao diện ARC" />
+      </div>
+    </dialog>
   </body>
 </html>

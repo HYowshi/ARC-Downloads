@@ -17,13 +17,17 @@ async function loadDownloads() {
   const results = await Promise.allSettled([
     fetch(
       "https://api.github.com/repos/HYowshi/ARC-Downloads/releases/latest",
+      { signal: AbortSignal.timeout(8000) },
     ).then(readJson),
     fetch("assets/qr-release.json").then(readJson),
   ]);
-  render(
-    results[0].status === "fulfilled" ? results[0].value : null,
-    results[1].status === "fulfilled" ? results[1].value : null,
-  );
+  let release = results[0].status === "fulfilled" ? results[0].value : null;
+  if (!release) {
+    try {
+      release = await fetch("assets/release.json").then(readJson);
+    } catch {}
+  }
+  render(release, results[1].status === "fulfilled" ? results[1].value : null);
 }
 function readJson(response) {
   if (!response.ok) throw new Error("Không tải được danh sách");
@@ -43,7 +47,19 @@ function render(release, qrManifest) {
   for (const [name, file, note] of platforms) {
     const card = el("article", "", "card");
     const asset = file && release?.assets.find((x) => x.name === file);
+    const platformIcon = el("div", "", "platform-icon " + name.toLowerCase());
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    const use = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    use.setAttribute(
+      "href",
+      "assets/platforms/platforms.svg#" + name.toLowerCase(),
+    );
+    svg.append(use);
+    platformIcon.append(svg);
     card.append(
+      platformIcon,
       el("span", asset ? "BẢN THỬ NGHIỆM" : "CHƯA PHÁT HÀNH", "badge"),
       el("h3", name),
       el("p", note, "note"),
@@ -56,6 +72,14 @@ function render(release, qrManifest) {
     ) {
       const a = el("a", "Tải trực tiếp ↗", "download");
       a.href = asset.browser_download_url;
+      a.addEventListener("click", () => {
+        a.textContent = "Đã mở liên kết ✓";
+        a.classList.add("download-opened");
+        setTimeout(() => {
+          a.textContent = "Tải trực tiếp ↗";
+          a.classList.remove("download-opened");
+        }, 2400);
+      });
       card.append(a, el("p", (asset.size / 1048576).toFixed(1) + " MB"));
       if (
         release.tag_name === qrManifest?.release &&

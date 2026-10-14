@@ -19,11 +19,17 @@ QR mở đúng đường dẫn tải. QR không tự cấp quyền cài đặt v
 
 ## Cập nhật trang tải
 
-Trang gồm `index.html`, `styles.css`, `app.js`; tự đọc bản phát hành mới nhất từ GitHub.
+Trang gồm `index.html`, `styles.css`, `app.js`, `experience.js`; tự đọc bản phát hành mới nhất từ GitHub. Nếu GitHub API tạm lỗi hoặc giới hạn lượt gọi, trang dùng `assets/release.json` đã lưu khi phát hành.
 Khi xuất bản bản mới, chạy `python tool/generate_release_qr.py <tag>` với thư viện trong `tool/requirements.txt`.
-Commit ảnh QR và `assets/qr-release.json` cùng nhau. Trang chỉ hiện QR khi tag và đường dẫn khớp release, tránh tải nhầm bản cũ.
+Commit ảnh QR, `assets/qr-release.json` và `assets/release.json` cùng nhau. Trang chỉ hiện QR khi tag và đường dẫn khớp release, tránh tải nhầm bản cũ.
 
-Chỉ tải từ repo này; kiểm tra SHA-256 đính kèm mỗi release. Không có API key, mật khẩu hoặc dữ liệu thành viên trong repo tải.
+Chỉ tải từ repo này; kiểm tra SHA-256 đính kèm mỗi release. Không đưa API key, mật khẩu, hồ sơ riêng hoặc ảnh minh chứng vào repo tải.
+
+## Ảnh và chuyển động
+
+`assets/screenshots` chứa ảnh chụp trực tiếp client ARC kết nối API, ở bố cục điện thoại và PC. Dữ liệu lịch trống trong ảnh là trạng thái thật tại thời điểm chụp. Khi chụp lại, tránh các trang chứa MSSV, email, số điện thoại hoặc minh chứng.
+
+Hiệu ứng tab trượt, mở ảnh lớn, thẻ xuất hiện và phản hồi nút tham khảo [Lucian Labs](https://lucianlabs.dev/uxui-prompt/), triển khai bằng CSS/JavaScript của trang. Hiệu ứng tôn trọng `prefers-reduced-motion`, không chạy vòng lặp lúc trang đứng yên. Icon nền tảng và giấy phép nằm trong `THIRD_PARTY_NOTICES.md`.
 
 ## Điều khoản và quyền riêng tư
 
