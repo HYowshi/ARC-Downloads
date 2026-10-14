@@ -26,3 +26,7 @@ ARC dùng hồ sơ CLB, lịch, điểm danh, góp ý và minh chứng đóng qu
 Dữ liệu do BCN/Admin quản lý. Liên hệ BCN để sửa hồ sơ, hỏi thời gian lưu trữ hoặc yêu cầu xử lý dữ liệu. Không công bố hồ sơ pháp lý được chứng nhận khi chưa có đơn vị chịu trách nhiệm và chính sách lưu trữ được phê duyệt.
 
 Trước phát hành chính thức cần: người/đơn vị chịu trách nhiệm, email hỗ trợ, thời hạn lưu và xóa dữ liệu, cơ sở sử dụng logo, quyền sử dụng chứng chỉ ký, chính sách quyền riêng tư được CLB phê duyệt. Các thông tin này không được tự bịa hoặc thay bằng chứng chỉ của tổ chức khác.
+
+## Đầu mối dữ liệu và hỗ trợ
+
+Harashi Yowshi · HarashiYowshi@gmail.com. Theo chính sách chủ dự án cung cấp, dữ liệu được lưu không thời hạn; khi có yêu cầu xóa, đầu mối hỗ trợ tiếp nhận, xác minh người yêu cầu và thực hiện xử lý. Đây hiện là quy trình liên hệ, chưa phải nút xóa dữ liệu tự động trong app. Không gửi mật khẩu/khóa riêng qua email hỗ trợ.
