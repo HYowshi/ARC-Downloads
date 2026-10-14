@@ -15,10 +15,7 @@ const platforms = [
 ];
 async function loadDownloads() {
   const results = await Promise.allSettled([
-    fetch(
-      "https://api.github.com/repos/HYowshi/ARC-Downloads/releases/latest",
-      { signal: AbortSignal.timeout(8000) },
-    ).then(readJson),
+    fetchLatestRelease(),
     fetch("assets/qr-release.json").then(readJson),
   ]);
   let release = results[0].status === "fulfilled" ? results[0].value : null;
@@ -28,6 +25,18 @@ async function loadDownloads() {
     } catch {}
   }
   render(release, results[1].status === "fulfilled" ? results[1].value : null);
+}
+async function fetchLatestRelease() {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 8000);
+  try {
+    return await fetch(
+      "https://api.github.com/repos/HYowshi/ARC-Downloads/releases/latest",
+      { signal: controller.signal },
+    ).then(readJson);
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 function readJson(response) {
   if (!response.ok) throw new Error("Không tải được danh sách");

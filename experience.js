@@ -139,7 +139,11 @@ syncTheme();
 document.getElementById("open-screenshot").addEventListener("click", () => {
   largeShot.src = galleryImage.src;
   largeShot.alt = galleryImage.alt;
-  dialog.showModal();
+  if (typeof dialog.showModal === "function") {
+    dialog.showModal();
+  } else {
+    window.open(galleryImage.src, "_blank", "noopener,noreferrer");
+  }
 });
 document
   .getElementById("close-screenshot")
@@ -176,12 +180,17 @@ if (!reducedMotion.matches && "IntersectionObserver" in window) {
       element.classList.add("reveal");
       observer.observe(element);
     });
-  reducedMotion.addEventListener("change", (event) => {
+  const onMotionChange = (event) => {
     if (event.matches) {
       document.documentElement.classList.remove("motion-enabled");
       observer.disconnect();
     }
-  });
+  };
+  if (typeof reducedMotion.addEventListener === "function") {
+    reducedMotion.addEventListener("change", onMotionChange);
+  } else {
+    reducedMotion.addListener(onMotionChange);
+  }
 }
 if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
   const visual = document.querySelector("[data-tilt]");
