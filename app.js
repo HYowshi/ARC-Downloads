@@ -16,7 +16,7 @@ const platforms = [
 async function loadDownloads() {
   const results = await Promise.allSettled([
     fetchLatestRelease(),
-    fetch("assets/qr-release.json").then(readJson),
+    fetch("assets/qr-release.json", { cache: "no-store" }).then(readJson),
   ]);
   let release = results[0].status === "fulfilled" ? results[0].value : null;
   if (!release) {
@@ -94,14 +94,14 @@ function render(release, qrManifest) {
         release.tag_name === qrManifest?.release &&
         qrManifest.assets?.[name] === asset.browser_download_url
       ) {
-        const b = el("button", "Hiện QR tải", "qr-button");
+        const b = el("button", "Quét QR để tải", "qr-button");
         b.type = "button";
         b.setAttribute("aria-expanded", "false");
         b.onclick = () => {
           let qr = card.querySelector(".qr");
           if (qr) {
             qr.remove();
-            b.textContent = "Hiện QR tải";
+            b.textContent = "Quét QR để tải";
             b.setAttribute("aria-expanded", "false");
             return;
           }

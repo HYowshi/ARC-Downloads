@@ -792,3 +792,7 @@ dialog[open] {
     opacity: 1 !important;
   }
 }
+
+.qr-button { display: block; width: 100%; margin-top: 12px; padding: 12px 16px; border: 1px solid var(--accent); border-radius: 12px; font-size: 14px; cursor: pointer; }
+.qr-button:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+.qr-button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
