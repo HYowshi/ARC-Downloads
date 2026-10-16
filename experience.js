@@ -23,6 +23,18 @@ const shots = {
     label: "Lịch tháng ARC trên mobile",
     layout: "phone",
   },
+  login: {
+    title: "Không gian riêng của thành viên ARC",
+    description: "Đăng nhập bằng tài khoản do CLB cấp. Tùy chọn nhớ tài khoản giúp bạn không phải nhập lại MSSV ở lần tiếp theo.",
+    label: "Đăng nhập ARC trên PC",
+    layout: "desktop",
+  },
+  welcome: {
+    title: "Bắt đầu một hành trình cùng CLB",
+    description: "Màn hình chào mừng giới thiệu các hoạt động chính. Sau lần đầu, ARC đưa bạn đến đăng nhập hoặc phiên làm việc đang có.",
+    label: "Màn hình chào mừng ARC trên PC",
+    layout: "desktop",
+  },
   desktop: {
     title: "Không gian rộng cho màn hình lớn",
     description:
@@ -41,7 +53,7 @@ function shotSource(name) {
       ? "home-" + (isLight() ? "light" : "dark")
       : name === "calendar"
         ? "calendar-light"
-        : "calendar-desktop") +
+        : name === "welcome" ? "welcome-desktop" : name === "login" ? "login-desktop" : "calendar-desktop") +
     ".png"
   );
 }
@@ -67,7 +79,7 @@ function selectShot(name, animate = true) {
   document.getElementById("shot-title").textContent = shot.title;
   document.getElementById("shot-description").textContent = shot.description;
   document.getElementById("shot-number").textContent =
-    "0" + (index + 1) + " / 03";
+    "0" + (index + 1) + " / " + String(tabs.length).padStart(2, "0");
   document
     .getElementById("shot-panel")
     .setAttribute("aria-labelledby", "shot-" + name);
@@ -80,6 +92,10 @@ function selectShot(name, animate = true) {
     !reducedMotion.matches &&
     typeof galleryImage.animate === "function"
   ) {
+    document.querySelector(".shot-description").animate(
+      [{opacity: .35, transform: "translateY(6px)"}, {opacity: 1, transform: "translateY(0)"}],
+      {duration: 280, easing: "cubic-bezier(.22,1,.36,1)"},
+    );
     galleryImage.animate(
       [
         {
@@ -216,3 +232,17 @@ if (matchMedia("(hover: hover) and (pointer: fine)").matches) {
     visual.style.setProperty("--tilt-y", "0deg");
   });
 }
+
+// Chỉ cập nhật khi cuộn, gộp thay đổi trong một frame.
+const progress = document.querySelector(".reading-progress");
+let scrollPending = false;
+function updateReadingProgress() {
+  const range = document.documentElement.scrollHeight - innerHeight;
+  progress.style.transform = "scaleX(" + (range > 0 ? scrollY / range : 0) + ")";
+  scrollPending = false;
+}
+addEventListener("scroll", () => {
+  if (!scrollPending) { scrollPending = true; requestAnimationFrame(updateReadingProgress); }
+}, {passive: true});
+addEventListener("resize", updateReadingProgress);
+updateReadingProgress();

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /ARC-Downloads/
+Sitemap: https://hyowshi.github.io/ARC-Downloads/sitemap.xml

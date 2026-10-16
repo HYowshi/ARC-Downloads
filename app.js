@@ -3,7 +3,7 @@ const platforms = [
   [
     "Android",
     "ARC-Android-test.apk",
-    "APK thử nghiệm; cần xác nhận cài từ nguồn này.",
+    "APK nội bộ, ký bằng khóa ARC; xác nhận cài trên thiết bị.",
   ],
   [
     "Windows",
@@ -11,17 +11,23 @@ const platforms = [
     "Giải nén và chạy ARC.exe; bản portable chưa ký.",
   ],
   ["macOS", "ARC-macOS-test.zip", "Bản thử nghiệm chưa notarize."],
-  ["iOS", null, "Chờ IPA hợp lệ; build unsigned chưa thể cài trực tiếp."],
+  ["iOS", "ARC-iOS-signed-test.ipa", "Chờ IPA hợp lệ; build unsigned chưa thể cài trực tiếp."],
 ];
+const platformDetails = {
+  Android: {specs: ["APK · Điện thoại / máy tính bảng", "Camera + vị trí cho điểm danh"], steps: ["Tải APK trên thiết bị Android.", "Mở tệp, cấp quyền cài từ nguồn này nếu hệ điều hành yêu cầu.", "Đăng nhập bằng tài khoản BCN/Admin cấp."]},
+  Windows: {specs: ["Windows 10/11 · x64", "Bản portable · không cần trình cài"], steps: ["Tải ZIP và giải nén toàn bộ vào một thư mục.", "Mở ARC.exe, giữ nguyên các tệp DLL và thư mục data đi kèm.", "Nếu bị chính sách thiết bị chặn, liên hệ người quản trị."]},
+  macOS: {specs: ["macOS 12 trở lên", "Intel x86_64 + Apple Silicon arm64"], steps: ["Tải ZIP và giải nén ARC.app.", "Di chuyển ứng dụng vào Applications.", "Bản chưa notarize có thể bị Gatekeeper chặn; dùng bản web nếu không mở được."]},
+  iOS: {specs: ["iOS 15 trở lên", "Cần chứng chỉ + provisioning hợp lệ"], steps: ["Bản unsigned dành cho quy trình ký, không phải bản cài trực tiếp.", "Trong lúc chờ bản ký hợp lệ, mở ARC Web bằng Safari.", "Có thể thêm website vào Màn hình chính từ menu Chia sẻ."]},
+};
 async function loadDownloads() {
   const results = await Promise.allSettled([
-    fetchLatestRelease(),
+    fetch("assets/release.json", {cache: "no-store"}).then(readJson),
     fetch("assets/qr-release.json", { cache: "no-store" }).then(readJson),
   ]);
   let release = results[0].status === "fulfilled" ? results[0].value : null;
   if (!release) {
     try {
-      release = await fetch("assets/release.json").then(readJson);
+      release = await fetchLatestRelease();
     } catch {}
   }
   render(release, results[1].status === "fulfilled" ? results[1].value : null);
@@ -73,6 +79,10 @@ function render(release, qrManifest) {
       el("h3", name),
       el("p", note, "note"),
     );
+    const details = platformDetails[name];
+    const specs = el("ul", "", "platform-specs");
+    details.specs.forEach((text) => specs.append(el("li", text)));
+    card.append(specs);
     if (
       asset &&
       asset.browser_download_url.startsWith(
@@ -118,7 +128,18 @@ function render(release, qrManifest) {
         };
         card.append(b);
       }
-    } else card.append(el("p", "Chưa có tệp cài đặt phù hợp."));
+    } else {
+      card.append(el("p", "Chưa có tệp cài đặt phù hợp."));
+      const web = el("a", "Dùng ARC Web ↗", "secondary");
+      web.href = "https://airoboticsclub.pages.dev/";
+      card.append(web);
+    }
+    const guide = el("details", "", "install-guide");
+    guide.append(el("summary", "Hướng dẫn cài đặt"));
+    const steps = el("ol");
+    details.steps.forEach((text) => steps.append(el("li", text)));
+    guide.append(steps);
+    card.append(guide);
     document.getElementById("downloads-list").append(card);
   }
 }

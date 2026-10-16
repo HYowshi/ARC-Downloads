@@ -8,6 +8,8 @@ on:
       - 'app.js'
       - 'experience.js'
       - 'assets/**'
+      - 'robots.txt'
+      - 'sitemap.xml'
       - '.github/workflows/pages.yml'
   workflow_dispatch:
 permissions:
@@ -32,6 +34,7 @@ jobs:
         with:
           path: .
           name: ${{ env.PAGES_ARTIFACT_NAME }}
+          retention-days: 1
       - uses: actions/deploy-pages@v4
         id: deployment
         with:

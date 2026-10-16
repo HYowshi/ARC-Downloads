@@ -7,9 +7,25 @@
       name="description"
       content="ARC — ứng dụng nội bộ CLB AI-Robotics, trực thuộc DNTU. Lịch, điểm danh và đóng quỹ."
     />
-    <title>ARC · Kết nối CLB AI-Robotics</title>
+    <title>ARC · CLB AI-Robotics | Tải ứng dụng &amp; dùng trên web</title>
+    <meta name="theme-color" content="#000823" />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://hyowshi.github.io/ARC-Downloads/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="vi_VN" />
+    <meta property="og:site_name" content="ARC · CLB AI-Robotics" />
+    <meta property="og:title" content="Mọi hoạt động CLB. Trong một ARC." />
+    <meta property="og:description" content="Khám phá lịch, điểm danh QR/GPS, đóng quỹ và kết nối CLB. Xem giao diện thực tế và tải ARC cho thiết bị của bạn." />
+    <meta property="og:url" content="https://hyowshi.github.io/ARC-Downloads/" />
+    <meta property="og:image" content="https://hyowshi.github.io/ARC-Downloads/assets/screenshots/welcome-desktop.png" />
+    <meta property="og:image:alt" content="Màn hình chào mừng thực tế của ARC" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ARC · CLB AI-Robotics" />
+    <meta name="twitter:description" content="Lịch, điểm danh, quỹ và kết nối CLB trong một ứng dụng." />
+    <meta name="twitter:image" content="https://hyowshi.github.io/ARC-Downloads/assets/screenshots/welcome-desktop.png" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ARC","applicationCategory":"EducationalApplication","operatingSystem":"Web, Android, iOS, Windows, macOS","url":"https://hyowshi.github.io/ARC-Downloads/","description":"Ứng dụng nội bộ CLB AI-Robotics. Tài khoản do BCN/Admin cấp. Bản iOS cài đặt đang chờ chữ ký hợp lệ.","author":{"@type":"Person","name":"Harashi Yowshi"}}</script>
     <link rel="icon" href="assets/arc.png" />
-    <link rel="stylesheet" href="styles.css?v=20261015-qr" />
+    <link rel="stylesheet" href="styles.css?v=20261016-release" />
     <script>
       try {
         document.documentElement.dataset.theme =
@@ -18,6 +34,8 @@
     </script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div class="reading-progress" aria-hidden="true"></div>
     <nav class="wrap nav">
       <a class="brand" href="#"
         ><img src="assets/arc.png" alt="Logo ARC" />ARC</a
@@ -42,7 +60,7 @@
         </button>
       </div>
     </nav>
-    <main>
+    <main id="main">
       <section class="wrap hero">
         <div>
           <p class="eyebrow">CLB AI-ROBOTICS · TRỰC THUỘC DNTU</p>
@@ -55,6 +73,7 @@
             <a class="primary" href="https://airoboticsclub.pages.dev/" target="_blank" rel="noopener">Dùng ARC trên web ↗</a
             ><a class="secondary" href="#downloads">Tải ứng dụng</a>
           </div>
+          <div class="hero-chips" aria-label="Nền tảng ARC"><span>Android</span><span>iOS</span><span>Windows</span><span>macOS</span><span>Web</span></div>
           <p class="small">
             Ứng dụng nội bộ. Tài khoản được BCN/Admin cấp cho thành viên.
           </p>
@@ -129,6 +148,8 @@
           >
             Lịch PC
           </button>
+          <button role="tab" id="shot-welcome" aria-selected="false" aria-controls="shot-panel" data-shot="welcome" tabindex="-1" type="button">Chào mừng</button>
+          <button role="tab" id="shot-login" aria-selected="false" aria-controls="shot-panel" data-shot="login" tabindex="-1" type="button">Đăng nhập</button>
         </div>
         <div
           id="shot-panel"
@@ -137,13 +158,13 @@
           class="shot-panel"
         >
           <div class="shot-description">
-            <span id="shot-number" class="eyebrow">01 / 03</span>
+            <span id="shot-number" class="eyebrow">01 / 05</span>
             <h3 id="shot-title">Các chức năng trong tầm tay</h3>
             <p id="shot-description">
               Trang chủ phân bố theo vai trò. Thành viên và BCN/Admin có các
               chức năng phù hợp với tài khoản.
             </p>
-            <span class="capture-note">Chụp từ ARC · 14/10/2026</span>
+            <span class="capture-note">Ảnh từ ARC thực tế · 14–16/10/2026</span>
           </div>
           <button
             id="open-screenshot"
@@ -200,6 +221,15 @@
             </p>
           </article>
         </div>
+      </section>
+      <section class="wrap product-story" id="product">
+        <div class="section-heading reveal"><p class="eyebrow">MỘT KHÔNG GIAN CHUNG</p><h2>Từ lịch hẹn đến một CLB gắn kết.</h2><p>ARC giúp thành viên biết mình cần làm gì, và giúp BCN theo dõi hoạt động trong cùng một hệ thống.</p></div>
+        <figure class="product-capture reveal"><img src="assets/screenshots/welcome-desktop.png" alt="Màn hình chào mừng ARC thực tế với các chức năng lịch, điểm danh và kết nối CLB" width="1280" height="720" loading="lazy" decoding="async"><figcaption>ARC · Một khởi đầu rõ ràng cho mỗi thành viên.</figcaption></figure>
+        <div class="story-grid">
+          <article class="story-card reveal"><span class="story-index">DÀNH CHO THÀNH VIÊN</span><h3>Chủ động tham gia.<br>Không bỏ lỡ việc chung.</h3><ul><li>Xem lịch, đăng ký sự kiện và buổi trực.</li><li>Điểm danh bằng QR hoặc PIN, có kiểm tra vị trí.</li><li>Theo dõi tháng đóng quỹ, đóng bù và gửi minh chứng.</li><li>Xem hồ sơ, quy định, thông báo và gửi góp ý.</li></ul></article>
+          <article class="story-card reveal"><span class="story-index">DÀNH CHO BCN / ADMIN</span><h3>Quản lý rõ ràng.<br>Phối hợp dễ dàng.</h3><ul><li>Cấp tài khoản, quản lý hồ sơ và danh mục.</li><li>Tổ chức sự kiện, lịch trực và danh sách điểm danh.</li><li>Theo dõi quỹ theo tháng, cấu hình tài khoản nhận.</li><li>Tổng hợp đánh giá, xuất Excel và phản hồi góp ý.</li></ul></article>
+        </div>
+        <div class="journey reveal" aria-label="Cách bắt đầu dùng ARC"><article><span>01</span><h3>Nhận tài khoản</h3><p>BCN/Admin cấp tài khoản cho thành viên CLB.</p></article><article><span>02</span><h3>Chọn cách truy cập</h3><p>Mở bản web hoặc cài bản phù hợp với thiết bị.</p></article><article><span>03</span><h3>Cùng hoạt động</h3><p>Kiểm tra lịch, đăng ký và theo dõi thông tin CLB.</p></article></div>
       </section>
       <section class="wrap faq" id="guide">
         <div class="section-heading reveal">
@@ -260,7 +290,9 @@
           <p class="eyebrow">CHỌN NỀN TẢNG CỦA BẠN</p>
           <h2>Mang ARC theo bên mình.</h2>
           <p id="status" role="status">Đang kiểm tra bản tải mới nhất…</p>
-          <div class="grid" id="downloads-list"></div>
+          <div class="grid" id="downloads-list" aria-label="Các bản tải theo nền tảng"></div>
+          <noscript><p>Tải tệp cài đặt tại <a href="https://github.com/HYowshi/ARC-Downloads/releases">GitHub Releases</a> hoặc <a href="https://airoboticsclub.pages.dev/">dùng ARC Web</a>.</p></noscript>
+          <div class="web-callout reveal"><div><p class="eyebrow">KHÔNG MUỐN CÀI APP?</p><h3>Mở trình duyệt. Dùng ngay ARC.</h3><p>Cùng tài khoản CLB, giao diện thích nghi với điện thoại và PC.</p></div><a class="primary" href="https://airoboticsclub.pages.dev/" target="_blank" rel="noopener">Mở ARC Web ↗</a></div>
           <p class="small">
             QR mở liên kết tải. Bạn cần xác nhận cài đặt trên thiết bị; website
             không thể tự cài ứng dụng.
@@ -275,8 +307,8 @@
           <p class="eyebrow">TRƯỚC KHI CÀI ĐẶT</p>
           <h2>Biết rõ bản bạn tải.</h2>
           <p>
-            ARC hiện phát hành dưới dạng thử nghiệm. Android, Windows và macOS
-            chưa có đầy đủ chữ ký phân phối. iOS cần IPA đã ký và provisioning
+            ARC phát hành nội bộ. APK Android có chữ ký ARC; Windows chưa ký
+            Authenticode, macOS chưa notarize. iOS cần IPA đã ký và provisioning
             hợp lệ trước khi có thể cài.
           </p>
           <p>
@@ -303,7 +335,7 @@
       </section>
     </main>
     <footer class="wrap">
-      <strong>ARC</strong><span>CLB AI-Robotics · Trực thuộc DNTU</span>
+      <strong>ARC</strong><span class="affiliation">CLB AI-Robotics · Trực thuộc <img src="assets/dntu.svg" alt="Đại học Công nghệ Đồng Nai DNTU" width="62" height="26" loading="lazy"></span>
       <div>
         <a href="https://github.com/HYowshi/ARC-Downloads">GitHub ↗</a
         ><a class="credits" href="https://fontawesome.com/license/free"
@@ -311,8 +343,8 @@
         >
       </div>
     </footer>
-    <script src="app.js?v=20261015-qr" defer></script>
-    <script src="experience.js" defer></script>
+    <script src="app.js?v=20261016-release" defer></script>
+    <script src="experience.js?v=20261016-release" defer></script>
     <dialog id="screenshot-dialog" aria-label="Ảnh giao diện ARC">
       <div class="viewer">
         <button
