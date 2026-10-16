@@ -117,7 +117,7 @@ function render(release, qrManifest) {
           }
           qr = el("div", "", "qr");
           const img = el("img");
-          img.src = "assets/qr-" + name.toLowerCase() + ".png";
+          img.src = "assets/qr-" + name.toLowerCase() + ".png?v=" + encodeURIComponent(release.tag_name);
           img.alt = "QR tải ARC " + name + " " + release.tag_name;
           img.width = 180;
           img.height = 180;
