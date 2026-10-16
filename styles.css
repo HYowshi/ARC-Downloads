@@ -854,3 +854,5 @@ dialog[open] {
 .product-capture figcaption { color: var(--muted); font-size: 12px; padding: 12px 8px 2px; }
 .affiliation { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; }
 .affiliation img { object-fit: contain; padding: 3px; background: #fff; border-radius: 4px; }
+.grid { align-items: start; }
+.card .note { flex: initial; min-height: 64px; }
