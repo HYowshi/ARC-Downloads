@@ -1,31 +1,31 @@
 {
-  "tag_name": "v1.0.1-test.1",
-  "published_at": "2026-10-16T05:37:44Z",
+  "tag_name": "v1.0.2-test.1",
+  "published_at": "2026-10-20T06:29:59Z",
   "assets": [
     {
       "name": "ARC-Android-test.apk",
-      "size": 78157312,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/ARC-Android-test.apk"
+      "size": 79354800,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-Android-test.apk"
     },
     {
       "name": "ARC-iOS-unsigned.ipa",
-      "size": 9769186,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/ARC-iOS-unsigned.ipa"
+      "size": 9960600,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-iOS-unsigned.ipa"
     },
     {
       "name": "ARC-macOS-test.zip",
-      "size": 22473224,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/ARC-macOS-test.zip"
+      "size": 22863536,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-macOS-test.zip"
     },
     {
       "name": "ARC-Windows-test.zip",
-      "size": 14959387,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/ARC-Windows-test.zip"
+      "size": 14301123,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-Windows-test.zip"
     },
     {
       "name": "SHA256SUMS.txt",
       "size": 350,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/SHA256SUMS.txt"
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/SHA256SUMS.txt"
     }
   ]
 }

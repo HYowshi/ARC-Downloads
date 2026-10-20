@@ -23,6 +23,12 @@ const shots = {
     label: "Lịch tháng ARC trên mobile",
     layout: "phone",
   },
+  qr: {
+    title: "Một đường dẫn. Một mã QR của riêng bạn.",
+    description: "Chọn mẫu, màu sắc, chấm và góc, thêm logo và tiêu đề. Xuất PNG/SVG, chia sẻ ảnh và lưu nháp ngay trên thiết bị; ảnh QR được đọc lại để kiểm tra đúng link.",
+    label: "QR Studio trong ARC",
+    layout: "desktop",
+  },
   login: {
     title: "Không gian riêng của thành viên ARC",
     description: "Đăng nhập bằng tài khoản do CLB cấp. Tùy chọn nhớ tài khoản giúp bạn không phải nhập lại MSSV ở lần tiếp theo.",
@@ -53,7 +59,7 @@ function shotSource(name) {
       ? "home-" + (isLight() ? "light" : "dark")
       : name === "calendar"
         ? "calendar-light"
-        : name === "welcome" ? "welcome-desktop" : name === "login" ? "login-desktop" : "calendar-desktop") +
+        : name === "qr" ? "qr-studio" : name === "welcome" ? "welcome-desktop" : name === "login" ? "login-desktop" : "calendar-desktop") +
     ".png"
   );
 }

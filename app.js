@@ -15,7 +15,7 @@ const platforms = [
 ];
 const platformDetails = {
   Android: {specs: ["APK · Điện thoại / máy tính bảng", "Camera + vị trí cho điểm danh"], steps: ["Tải APK trên thiết bị Android.", "Mở tệp, cấp quyền cài từ nguồn này nếu hệ điều hành yêu cầu.", "Đăng nhập bằng tài khoản BCN/Admin cấp."]},
-  Windows: {specs: ["Windows 10/11 · x64", "Bản portable · không cần trình cài"], steps: ["Tải ZIP và giải nén toàn bộ vào một thư mục.", "Mở ARC.exe, giữ nguyên các tệp DLL và thư mục data đi kèm.", "Nếu bị chính sách thiết bị chặn, liên hệ người quản trị."]},
+  Windows: {specs: ["Windows 10/11 · x64", "Bản portable · không cần trình cài"], steps: ["Tải ZIP và giải nén toàn bộ vào một thư mục.", "Mở ARC.exe, giữ nguyên các tệp DLL và thư mục data đi kèm.", "Nếu báo thiếu MSVCP140/VCRUNTIME140, cài Visual C++ Redistributable x64 từ Microsoft. Nếu bị chính sách thiết bị chặn, liên hệ người quản trị."]},
   macOS: {specs: ["macOS 12 trở lên", "Intel x86_64 + Apple Silicon arm64"], steps: ["Tải ZIP và giải nén ARC.app.", "Di chuyển ứng dụng vào Applications.", "Bản chưa notarize có thể bị Gatekeeper chặn; dùng bản web nếu không mở được."]},
   iOS: {specs: ["iOS 15 trở lên", "Cần chứng chỉ + provisioning hợp lệ"], steps: ["Bản unsigned dành cho quy trình ký, không phải bản cài trực tiếp.", "Trong lúc chờ bản ký hợp lệ, mở ARC Web bằng Safari.", "Có thể thêm website vào Màn hình chính từ menu Chia sẻ."]},
 };

@@ -8,13 +8,13 @@
 
 ## Nền tảng
 
-**Bản hiện tại: `v1.0.1-test.1`** · [Ghi chú và SHA-256](https://github.com/HYowshi/ARC-Downloads/releases/tag/v1.0.1-test.1)
+**Bản hiện tại: `v1.0.2-test.1`** · [Ghi chú và SHA-256](https://github.com/HYowshi/ARC-Downloads/releases/tag/v1.0.2-test.1)
 
 | Nền tảng | Trạng thái | Tải trực tiếp | QR tải |
 | --- | --- | --- | --- |
-| Android | APK nội bộ ký bằng khóa ARC ổn định; bản test debug cũ cần gỡ trước khi cài. | [Tải APK](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/ARC-Android-test.apk) | <img src="assets/qr-android.png" width="120" alt="QR tải APK 1.0.1"> |
-| Windows | Bản portable thử nghiệm, chưa ký Authenticode. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/ARC-Windows-test.zip) | <img src="assets/qr-windows.png" width="120" alt="QR tải Windows 1.0.1"> |
-| macOS | Universal Intel/Apple Silicon, macOS 12+, chưa notarize. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.1-test.1/ARC-macOS-test.zip) | <img src="assets/qr-macos.png" width="120" alt="QR tải macOS 1.0.1"> |
+| Android | APK nội bộ ký bằng khóa ARC ổn định; bản test debug cũ cần gỡ trước khi cài. | [Tải APK](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-Android-test.apk) | <img src="assets/qr-android.png" width="120" alt="QR tải APK 1.0.1"> |
+| Windows | Bản portable thử nghiệm, chưa ký Authenticode. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-Windows-test.zip) | <img src="assets/qr-windows.png" width="120" alt="QR tải Windows 1.0.1"> |
+| macOS | Universal Intel/Apple Silicon, macOS 12+, chưa notarize. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-macOS-test.zip) | <img src="assets/qr-macos.png" width="120" alt="QR tải macOS 1.0.1"> |
 | iOS | Build unsigned chưa cài được trực tiếp; chờ chứng chỉ/provisioning hợp lệ cho ARC. | Chưa có IPA | — |
 
 QR mở đúng đường dẫn tải. QR không tự cấp quyền cài đặt và không vượt qua cơ chế bảo vệ hệ điều hành.
@@ -51,3 +51,8 @@ Harashi Yowshi · HarashiYowshi@gmail.com. Theo chính sách chủ dự án cung
 Canonical, Open Graph, Twitter Card, SoftwareApplication JSON-LD và sitemap mô tả ARC theo đúng trạng thái phát hành. Không thêm đánh giá, người dùng hoặc lời chứng thực giả. GitHub Pages dạng project không quản lý robots.txt ở gốc hyowshi.github.io; sitemap có thể gửi trực tiếp cho công cụ tìm kiếm nếu cần. SEO không bảo đảm thứ hạng hay thời gian được lập chỉ mục.
 
 Ảnh đăng nhập và chào mừng được chụp từ bản ARC thực tế ngày 16/10/2026. Không có mật khẩu hoặc hồ sơ riêng trong hai ảnh mới. Thanh tiến trình cuộn chỉ đo vị trí đọc trang; không phải tiến trình tải app. Animation sử dụng transform/opacity, IntersectionObserver và requestAnimationFrame theo sự kiện, tôn trọng prefers-reduced-motion; không chạy timer render liên tục.
+
+
+## ARC 1.0.2 · QR Studio
+
+Ở trang chủ có Tạo mã QR cho mọi thành viên: dán link, chọn mẫu/màu/kiểu, logo, tiêu đề, xuất PNG/SVG, chia sẻ ảnh khi thiết bị hỗ trợ và lưu nháp. Link/logo không gửi lên server. Ảnh được đọc lại để kiểm tra đúng link trước khi cho xuất. QR tĩnh không có thống kê lượt quét hay đổi đích sau khi xuất. Ảnh QR Studio trên trang tải được chụp từ website ARC thật ngày 20/10/2026, link trong ảnh là website công khai của ARC.
