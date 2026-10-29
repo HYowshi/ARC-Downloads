@@ -23,9 +23,9 @@
     <meta name="twitter:title" content="ARC · CLB AI-Robotics" />
     <meta name="twitter:description" content="Lịch, điểm danh, quỹ và kết nối CLB trong một ứng dụng." />
     <meta name="twitter:image" content="https://hyowshi.github.io/ARC-Downloads/assets/screenshots/welcome-desktop.png" />
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ARC","applicationCategory":"EducationalApplication","operatingSystem":"Web, Android, iOS, Windows, macOS","url":"https://hyowshi.github.io/ARC-Downloads/","description":"Ứng dụng nội bộ CLB AI-Robotics. Tài khoản do BCN/Admin cấp. Bản iOS cài đặt đang chờ chữ ký hợp lệ.","author":{"@type":"Person","name":"Harashi Yowshi"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ARC","applicationCategory":"EducationalApplication","operatingSystem":"Web, Android, iOS, Windows, macOS","url":"https://hyowshi.github.io/ARC-Downloads/","description":"Ứng dụng nội bộ CLB AI-Robotics. Tài khoản do BCN/Admin cấp. Bản iOS native đang chờ chứng chỉ ký còn hiệu lực.","author":{"@type":"Person","name":"Harashi Yowshi"}}</script>
     <link rel="icon" href="assets/arc.png" />
-    <link rel="stylesheet" href="styles.css?v=20261016-cards" />
+    <link rel="stylesheet" href="styles.css?v=20261030-showcase" />
     <script>
       try {
         document.documentElement.dataset.theme =
@@ -42,7 +42,7 @@
       >
       <div>
         <a href="#features" class="nav-explore">Khám phá</a
-        ><a href="#showcase">Ảnh app</a><a href="#downloads">Tải ARC</a>
+        ><a href="#showcase">Ảnh app</a><a href="presentation/">Giới thiệu ARC</a><a href="#downloads">Tải ARC</a>
         <button
           id="theme-toggle"
           class="icon-button"
@@ -71,7 +71,7 @@
           </p>
           <div class="actions">
             <a class="primary" href="https://airoboticsclub.pages.dev/" target="_blank" rel="noopener">Dùng ARC trên web ↗</a
-            ><a class="secondary" href="#downloads">Tải ứng dụng</a>
+            ><a class="secondary" href="#downloads">Tải ứng dụng</a><a class="secondary" href="presentation/">Xem giới thiệu ↗</a>
           </div>
           <div class="hero-chips" aria-label="Nền tảng ARC"><span>Android</span><span>iOS</span><span>Windows</span><span>macOS</span><span>Web</span></div>
           <p class="small">
@@ -110,8 +110,8 @@
           <p class="eyebrow">XEM TRƯỚC ARC</p>
           <h2>Giao diện thực. Trải nghiệm rõ ràng.</h2>
           <p>
-            Ảnh chụp trực tiếp từ client kết nối API của CLB. Chọn một màn hình
-            rồi nhấn ảnh để xem lớn.
+            Ảnh chụp từ giao diện Flutter ARC đang chạy. Dữ liệu trên ảnh là dữ liệu
+            minh họa. Chọn một màn hình rồi nhấn ảnh để xem lớn.
           </p>
         </div>
         <div class="shot-tabs" role="tablist" aria-label="Màn hình ARC">
@@ -165,7 +165,7 @@
               Trang chủ phân bố theo vai trò. Thành viên và BCN/Admin có các
               chức năng phù hợp với tài khoản.
             </p>
-            <span class="capture-note">Ảnh từ ARC thực tế · 14–20/10/2026</span>
+            <span class="capture-note">Giao diện ARC thật · Dữ liệu minh họa · 30/10/2026</span>
           </div>
           <button
             id="open-screenshot"
@@ -184,6 +184,28 @@
             /><span>Xem ảnh lớn ↗</span>
           </button>
         </div>
+      </section>
+      <section class="wrap app-gallery" id="app-gallery">
+        <div class="section-heading reveal">
+          <p class="eyebrow">ARC TRÊN TỪNG MÀN HÌNH</p>
+          <h2>Một app. Đủ không gian cho mọi việc CLB.</h2>
+          <p>Ảnh được chụp từ client Flutter ARC trên mobile và desktop. Tên và số liệu hiển thị chỉ dùng minh họa.</p>
+          <a class="secondary" href="presentation/">Mở bộ giới thiệu đầy đủ ↗</a>
+        </div>
+        <div class="app-gallery-grid">
+          <figure class="gallery-card gallery-feature"><img src="assets/screenshots/20261030/home-light.png" alt="Trang chủ ARC trên điện thoại, dữ liệu minh họa" width="390" height="844" loading="lazy" decoding="async"><figcaption><strong>Trang chủ</strong><span>Điều hướng nhanh theo vai trò</span></figcaption></figure>
+          <figure class="gallery-card"><img src="assets/screenshots/20261030/calendar-light.png" alt="Lịch hoạt động ARC trên điện thoại, dữ liệu minh họa" width="390" height="844" loading="lazy" decoding="async"><figcaption><strong>Lịch hoạt động</strong><span>Ngày, tuần và tháng</span></figcaption></figure>
+          <figure class="gallery-card"><img src="assets/screenshots/20261030/fund-mobile.png" alt="Đóng quỹ CLB trên điện thoại, dữ liệu minh họa" width="390" height="844" loading="lazy" decoding="async"><figcaption><strong>Đóng quỹ</strong><span>Theo dõi từng tháng</span></figcaption></figure>
+          <figure class="gallery-card"><img src="assets/screenshots/20261030/profile-mobile.png" alt="Hồ sơ thành viên ARC trên điện thoại, dữ liệu minh họa" width="390" height="844" loading="lazy" decoding="async"><figcaption><strong>Hồ sơ thành viên</strong><span>Thông tin và cài đặt cá nhân</span></figcaption></figure>
+          <figure class="gallery-card"><img src="assets/screenshots/20261030/notifications-mobile.png" alt="Thông báo ARC trên điện thoại, dữ liệu minh họa" width="390" height="844" loading="lazy" decoding="async"><figcaption><strong>Thông báo</strong><span>Mở đúng nội dung cần chú ý</span></figcaption></figure>
+          <figure class="gallery-card gallery-wide"><img src="assets/screenshots/20261030/evaluations-charts.png" alt="Dashboard đánh giá CLB ARC, dữ liệu minh họa" width="1280" height="720" loading="lazy" decoding="async"><figcaption><strong>Tổng hợp đánh giá</strong><span>Biểu đồ và số liệu theo hoạt động</span></figcaption></figure>
+          <figure class="gallery-card gallery-wide"><img src="assets/screenshots/20261030/calendar-desktop.png" alt="Lịch ARC trên máy tính, dữ liệu minh họa" width="1280" height="720" loading="lazy" decoding="async"><figcaption><strong>Giao diện desktop</strong><span>Bố cục mở rộng cho màn hình lớn</span></figcaption></figure>
+          <figure class="gallery-card gallery-wide"><img src="assets/screenshots/20261030/fund-management.png" alt="Quản lý quỹ CLB trên máy tính, dữ liệu minh họa" width="1280" height="720" loading="lazy" decoding="async"><figcaption><strong>Quản lý quỹ</strong><span>Đối soát thu theo thành viên và tháng</span></figcaption></figure>
+          <figure class="gallery-card gallery-wide"><img src="assets/screenshots/20261030/feedback-desktop.png" alt="Hòm góp ý ARC dành cho BCN và Admin, dữ liệu minh họa" width="1280" height="720" loading="lazy" decoding="async"><figcaption><strong>Hòm góp ý</strong><span>Tiếp nhận và phản hồi trong cùng luồng</span></figcaption></figure>
+          <figure class="gallery-card gallery-wide"><img src="assets/screenshots/20261030/student-desktop.png" alt="Quản lý hồ sơ thành viên ARC, dữ liệu minh họa" width="1280" height="720" loading="lazy" decoding="async"><figcaption><strong>Quản lý thành viên</strong><span>Tìm, lọc và cập nhật hồ sơ</span></figcaption></figure>
+          <figure class="gallery-card gallery-wide"><img src="assets/screenshots/20261030/qr-studio.png" alt="QR Studio ARC, giao diện tạo mã QR tùy chỉnh" width="1280" height="720" loading="lazy" decoding="async"><figcaption><strong>QR Studio</strong><span>Tạo mã, tùy chỉnh màu và xuất ảnh</span></figcaption></figure>
+        </div>
+        <p class="gallery-disclaimer">Ảnh giao diện được chụp từ client ARC. Dữ liệu thành viên và hoạt động trong ảnh là dữ liệu minh họa, không phải hồ sơ thật.</p>
       </section>
       <section class="wrap features" id="features">
         <p class="eyebrow">THIẾT KẾ CHO THÀNH VIÊN</p>
@@ -344,8 +366,8 @@
         >
       </div>
     </footer>
-    <script src="app.js?v=20261020-qr" defer></script>
-    <script src="experience.js?v=20261020-qr" defer></script>
+    <script src="app.js?v=20261030-showcase" defer></script>
+    <script src="experience.js?v=20261030-showcase" defer></script>
     <dialog id="screenshot-dialog" aria-label="Ảnh giao diện ARC">
       <div class="viewer">
         <button

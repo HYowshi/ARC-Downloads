@@ -8,16 +8,20 @@
 
 ## Nền tảng
 
-**Bản hiện tại: `v1.0.2-test.1`** · [Ghi chú và SHA-256](https://github.com/HYowshi/ARC-Downloads/releases/tag/v1.0.2-test.1)
+**Bản hiện tại: `v1.0.3-test.1`** · [Ghi chú và SHA-256](https://github.com/HYowshi/ARC-Downloads/releases/tag/v1.0.3-test.1)
 
 | Nền tảng | Trạng thái | Tải trực tiếp | QR tải |
 | --- | --- | --- | --- |
-| Android | APK nội bộ ký bằng khóa ARC ổn định; bản test debug cũ cần gỡ trước khi cài. | [Tải APK](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-Android-test.apk) | <img src="assets/qr-android.png" width="120" alt="QR tải APK 1.0.1"> |
-| Windows | Bản portable thử nghiệm, chưa ký Authenticode. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-Windows-test.zip) | <img src="assets/qr-windows.png" width="120" alt="QR tải Windows 1.0.1"> |
-| macOS | Universal Intel/Apple Silicon, macOS 12+, chưa notarize. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.2-test.1/ARC-macOS-test.zip) | <img src="assets/qr-macos.png" width="120" alt="QR tải macOS 1.0.1"> |
-| iOS | Build unsigned chưa cài được trực tiếp; chờ chứng chỉ/provisioning hợp lệ cho ARC. | Chưa có IPA | — |
+| Android | APK nội bộ ký bằng khóa ARC ổn định; bản test debug cũ cần gỡ trước khi cài. | [Tải APK](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/ARC-Android-test.apk) | <img src="assets/qr-android.png" width="120" alt="QR tải APK 1.0.3"> |
+| Windows | Bản portable thử nghiệm, chưa ký Authenticode. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/ARC-Windows-test.zip) | <img src="assets/qr-windows.png" width="120" alt="QR tải Windows 1.0.3"> |
+| macOS | Universal Intel/Apple Silicon, macOS 12+, chưa notarize. | [Tải ZIP](https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/ARC-macOS-test.zip) | <img src="assets/qr-macos.png" width="120" alt="QR tải macOS 1.0.3"> |
+| iOS | Build native thành công, nhưng chứng chỉ được cung cấp đã bị Apple thu hồi nên chưa ký cài trực tiếp được. Dùng ARC Web/PWA trên Safari. | [Mở ARC Web](https://airoboticsclub.pages.dev/) | — |
 
 QR mở đúng đường dẫn tải. QR không tự cấp quyền cài đặt và không vượt qua cơ chế bảo vệ hệ điều hành.
+
+## Bộ giới thiệu ARC
+
+Mở [bộ slide tương tác](https://hyowshi.github.io/ARC-Downloads/presentation/) để xem toàn bộ chức năng, vai trò và cách vận hành. Dùng phím mũi tên, mục lục, toàn màn hình hoặc in thành PDF. Slide dùng cùng ảnh giao diện thật và ghi rõ dữ liệu minh họa.
 
 ## Cập nhật trang tải
 
@@ -29,9 +33,13 @@ Chỉ tải từ repo này; kiểm tra SHA-256 đính kèm mỗi release. Không
 
 ## Ảnh và chuyển động
 
-`assets/screenshots` chứa ảnh chụp trực tiếp client ARC kết nối API, ở bố cục điện thoại và PC. Dữ liệu lịch trống trong ảnh là trạng thái thật tại thời điểm chụp. Khi chụp lại, tránh các trang chứa MSSV, email, số điện thoại hoặc minh chứng.
+`assets/screenshots` chứa ảnh chụp từ giao diện Flutter ARC đang chạy ở bố cục điện thoại và PC. Ảnh trong thư mục `20261030` dùng dữ liệu minh họa, không chứa hồ sơ thật. Trước khi chụp ảnh mới, không dùng hồ sơ, email, số điện thoại hoặc minh chứng của thành viên.
 
 Hiệu ứng tab trượt, mở ảnh lớn, thẻ xuất hiện và phản hồi nút tham khảo [Lucian Labs](https://lucianlabs.dev/uxui-prompt/), triển khai bằng CSS/JavaScript của trang. Hiệu ứng tôn trọng `prefers-reduced-motion`, không chạy vòng lặp lúc trang đứng yên. Icon nền tảng và giấy phép nằm trong `THIRD_PARTY_NOTICES.md`.
+
+## Trạng thái ký iOS
+
+Workflow ký riêng đã kiểm tra chứng chỉ và provisioning profile. Apple báo chứng chỉ ký đã bị thu hồi, nên quy trình từ chối tạo IPA cài đặt để tránh phát hành tệp không hợp lệ. Build iOS unsigned vẫn được giữ làm đầu vào ký lại khi có identity hợp lệ. Không công khai chứng chỉ, khóa riêng hoặc provisioning profile.
 
 ## Điều khoản và quyền riêng tư
 
@@ -50,7 +58,7 @@ Harashi Yowshi · HarashiYowshi@gmail.com. Theo chính sách chủ dự án cung
 
 Canonical, Open Graph, Twitter Card, SoftwareApplication JSON-LD và sitemap mô tả ARC theo đúng trạng thái phát hành. Không thêm đánh giá, người dùng hoặc lời chứng thực giả. GitHub Pages dạng project không quản lý robots.txt ở gốc hyowshi.github.io; sitemap có thể gửi trực tiếp cho công cụ tìm kiếm nếu cần. SEO không bảo đảm thứ hạng hay thời gian được lập chỉ mục.
 
-Ảnh đăng nhập và chào mừng được chụp từ bản ARC thực tế ngày 16/10/2026. Không có mật khẩu hoặc hồ sơ riêng trong hai ảnh mới. Thanh tiến trình cuộn chỉ đo vị trí đọc trang; không phải tiến trình tải app. Animation sử dụng transform/opacity, IntersectionObserver và requestAnimationFrame theo sự kiện, tôn trọng prefers-reduced-motion; không chạy timer render liên tục.
+Ảnh giao diện mới được chụp từ Flutter ARC đang chạy ngày 30/10/2026, với dữ liệu minh họa. Không có mật khẩu hoặc hồ sơ thật trong các ảnh này. Thanh tiến trình cuộn chỉ đo vị trí đọc trang; không phải tiến trình tải app. Animation sử dụng transform/opacity, IntersectionObserver và requestAnimationFrame theo sự kiện, tôn trọng prefers-reduced-motion; không chạy timer render liên tục.
 
 
 ## ARC 1.0.2 · QR Studio

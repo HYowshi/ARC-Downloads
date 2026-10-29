@@ -11,7 +11,7 @@ const platforms = [
     "Giải nén và chạy ARC.exe; bản portable chưa ký.",
   ],
   ["macOS", "ARC-macOS-test.zip", "Bản thử nghiệm chưa notarize."],
-  ["iOS", "ARC-iOS-signed-test.ipa", "Chờ IPA hợp lệ; build unsigned chưa thể cài trực tiếp."],
+  ["iOS", "ARC-iOS-signed-test.ipa", "Chứng chỉ ký iOS hiện đã bị thu hồi; dùng ARC Web trong lúc chờ chứng chỉ hợp lệ."],
 ];
 const platformDetails = {
   Android: {specs: ["APK · Điện thoại / máy tính bảng", "Camera + vị trí cho điểm danh"], steps: ["Tải APK trên thiết bị Android.", "Mở tệp, cấp quyền cài từ nguồn này nếu hệ điều hành yêu cầu.", "Đăng nhập bằng tài khoản BCN/Admin cấp."]},
