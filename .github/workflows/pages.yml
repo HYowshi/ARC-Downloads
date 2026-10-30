@@ -8,6 +8,7 @@ on:
       - 'app.js'
       - 'experience.js'
       - 'assets/**'
+      - 'presentation/**'
       - 'robots.txt'
       - 'sitemap.xml'
       - '.github/workflows/pages.yml'
@@ -39,3 +40,4 @@ jobs:
         id: deployment
         with:
           artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
+
