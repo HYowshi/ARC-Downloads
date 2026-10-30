@@ -1,7 +1,185 @@
 <!doctype html>
-<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARC · Giới thiệu ứng dụng</title><meta name="description" content="Bộ trình chiếu tương tác giới thiệu ARC: hồ sơ, lịch, điểm danh GPS, quỹ CLB, báo cáo và kiến trúc vận hành."><meta name="robots" content="index,follow"><link rel="canonical" href="https://hyowshi.github.io/ARC-Downloads/presentation/"><meta name="theme-color" content="#050b20"><link rel="icon" href="../assets/arc.png"><link rel="stylesheet" href="slides.css"></head><body>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ARC · Giới thiệu ứng dụng</title><meta name="description" content="Bộ trình chiếu tương tác giới thiệu ARC: hồ sơ, lịch, điểm danh GPS, quỹ CLB, báo cáo và kiến trúc vận hành."><meta name="robots" content="index,follow"><link rel="canonical" href="https://hyowshi.github.io/ARC-Downloads/presentation/"><meta name="theme-color" content="#050b20"><link rel="icon" href="../assets/arc.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"><style>/* ===========================================
+   FIXED 16:9 STAGE: MANDATORY BASE STYLES
+   Include this ENTIRE file in every presentation.
+   Slides are authored at 1920×1080 and scaled as a whole.
+   =========================================== */
+
+/* 1. Lock the browser viewport */
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 2. Full-window deck viewport */
+.deck-viewport {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: var(--stage-bg, #000);
+}
+
+/* 3. Fixed 16:9 design canvas.
+   JavaScript sets transform: translate(...) scale(...). */
+.deck-stage {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    transform-origin: 0 0;
+    background: var(--slide-bg, #fff);
+}
+
+/* 4. Slides stack inside the fixed stage.
+   Content must be laid out at 1920×1080, not reflowed per device. */
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    background: var(--slide-bg, #fff);
+}
+
+.slide.active,
+.slide.visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+}
+
+/* 5. Keep media inside authored slide bounds */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* 6. Presentation chrome stays outside the slide design system */
+.deck-controls {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+/* 7. Print one fixed-size slide per page */
+@media print {
+    html,
+    body {
+        width: 1920px;
+        height: auto;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-viewport {
+        position: static;
+        overflow: visible;
+        background: #fff;
+    }
+
+    .deck-stage {
+        position: static;
+        width: auto;
+        height: auto;
+        transform: none !important;
+        background: none;
+    }
+
+    .slide {
+        position: relative;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 1920px;
+        height: 1080px;
+        break-after: page;
+        page-break-after: always;
+    }
+
+    .slide:last-child {
+        break-after: auto;
+        page-break-after: auto;
+    }
+
+    .deck-controls {
+        display: none !important;
+    }
+}
+
+/* 8. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.2s !important;
+    }
+}
+
+:root{color-scheme:dark;--bg:#050b20;--ink:#f4faf8;--muted:#b6cdce;--accent:#71d9c8;--pink:#e5a3dc}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:14px 4vw;border-bottom:1px solid #ffffff14}.brand{display:flex;align-items:center;gap:12px;color:var(--ink);font-weight:700;text-decoration:none;letter-spacing:3px}.brand img{width:40px;height:40px;border-radius:12px}.brand span{font-size:12px;font-weight:400;letter-spacing:0;color:var(--muted);margin-left:8px}nav{display:flex;gap:12px;align-items:center}button,nav a{font:inherit;font-size:13px;color:var(--ink);background:transparent;border:1px solid #ffffff29;border-radius:8px;padding:8px 14px;cursor:pointer;text-decoration:none}button:hover,nav a:hover{background:#71d9c815;border-color:var(--accent)}button:focus-visible,a:focus-visible{outline:3px solid var(--pink);outline-offset:3px}button:disabled{opacity:.3;cursor:default}#deck{height:calc(100svh - 150px);min-height:500px;position:relative;overflow:hidden}.slide{position:absolute;inset:0;padding:clamp(24px,4vw,72px);display:grid;grid-template-columns:1fr;align-content:center;gap:20px;overflow:auto;opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .32s ease,transform .32s ease,visibility .32s}.slide.active{opacity:1;visibility:visible;transform:none}.slide h1,.slide h2{font-weight:650;letter-spacing:-.045em;line-height:1.12;font-size:clamp(32px,4vw,60px);margin:0;max-width:1100px}.slide h1{font-size:clamp(90px,15vw,190px);letter-spacing:.02em}.subtitle{font-size:clamp(19px,2vw,29px);color:var(--accent);margin:0;line-height:1.4;max-width:1050px}.copy{font-size:clamp(17px,1.55vw,24px);color:var(--muted);max-width:1020px;white-space:pre-line;margin:16px 0 0;line-height:1.65}.slide.has-image{grid-template-columns:minmax(300px,.8fr) minmax(0,1.4fr);column-gap:4vw}.slide.has-image .heading{grid-column:1/-1}.slide.has-image .copy{grid-column:1;align-self:center}.slide.has-image figure{grid-column:2;grid-row:2;margin:0;align-self:center;display:flex;justify-content:center;min-width:0}.slide img{display:block;max-width:100%;max-height:calc(100svh - 360px);object-fit:contain;border-radius:10px;box-shadow:0 24px 60px #0005}.slide.phone{grid-template-columns:1.3fr .7fr}.slide.phone .heading{grid-column:1;grid-row:1;align-self:end}.slide.phone figure{grid-row:1/3}.slide.phone img{max-height:calc(100svh - 230px);width:auto}.slide.cover{grid-template-columns:1.4fr .6fr}.slide.cover .heading{grid-column:1}.slide.cover .copy{grid-column:1}.slide.cover figure{grid-column:2;grid-row:1/3;margin:0}.slide.cover img{width:240px;border-radius:38px;box-shadow:0 0 90px #71d9c81a}.slide.statement .copy{font-size:clamp(22px,2.2vw,32px)}.caption{font-size:11px;color:#8ca7aa;position:absolute;bottom:12px;right:4vw}footer{height:74px;position:relative;display:flex;align-items:center;justify-content:space-between;padding:12px 4vw}.controls{display:flex;align-items:center;gap:20px}.controls button{font-size:22px;width:48px;padding:2px}.controls output{font-size:14px;min-width:62px;text-align:center}.hint{font-size:12px;color:#809b9f}.progress{position:absolute;bottom:0;left:0;right:0;height:3px;background:#ffffff12}.progress span{height:100%;display:block;background:var(--accent);transition:width .3s}dialog{background:#101b2e;color:var(--ink);width:min(920px,92vw);max-height:85vh;border:1px solid #ffffff20;border-radius:20px;padding:28px}dialog::backdrop{background:#000b;backdrop-filter:blur(8px)}.toc-head{display:flex;justify-content:space-between;align-items:center}.toc-head h2{margin:0 0 14px}#toc-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}#toc-list button{text-align:left;padding:12px}a{color:var(--accent)}@media(max-width:760px){header{height:68px;padding:12px 20px}.brand span,.hint,#fullscreen{display:none}nav{gap:6px}nav a,nav button{padding:7px;font-size:11px}#deck{height:calc(100svh - 136px);min-height:0}.slide,.slide.has-image,.slide.phone,.slide.cover{padding:24px;grid-template-columns:1fr;align-content:start;gap:18px}.slide.has-image .heading,.slide.phone .heading,.slide.cover .heading{grid-column:1;grid-row:auto}.slide.has-image .copy,.slide.phone .copy,.slide.cover .copy{grid-column:1;grid-row:auto;margin:0}.slide.has-image figure,.slide.phone figure,.slide.cover figure{grid-column:1;grid-row:auto;margin:0}.slide img,.slide.phone img{max-height:420px;max-width:100%}.slide.phone img{max-height:460px}.slide.cover img{width:140px;margin:24px auto}.slide h1{font-size:100px}.slide h2{font-size:32px}.copy{font-size:17px}.subtitle{font-size:19px}.caption{position:static;font-size:10px;margin-top:12px}footer{height:68px;padding:10px 24px;justify-content:center}#toc-list{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}@media print{header,footer,dialog{display:none!important}#deck{height:auto;overflow:visible}.slide,.slide.has-image,.slide.phone,.slide.cover{position:relative;opacity:1;visibility:visible;transform:none;break-after:page;height:180mm;overflow:hidden;background:#fff!important;color:#102b39!important;display:grid;padding:16mm;grid-template-columns:1fr 1fr}.slide h1,.slide h2{font-size:34pt}.subtitle{font-size:18pt;color:#006960}.copy{font-size:14pt;color:#314e50}.slide img,.slide.phone img{max-height:120mm}.caption{color:#49605f}body{background:#fff} @page{size:A4 landscape;margin:0}}
+
+:root{--stage-bg:#020816;--slide-bg:#07131e;--ink:#f2f8f5;--muted:#b5c9c6;--accent:#56ead3;--pink:#ec83dc;--ease:cubic-bezier(.2,.75,.25,1)}body{font-family:"Be Vietnam Pro",sans-serif;background:#020816}.deck-viewport{position:fixed;inset:0;background:radial-gradient(ellipse at 70% 10%,#12343b 0,transparent 38%),#020816}.deck-stage{width:1920px!important;height:1080px!important;min-height:0!important;position:absolute!important;left:0;top:0;overflow:hidden;transform-origin:0 0;background:#07131e}.slide{width:1920px!important;height:1080px!important;min-height:0!important;inset:0;padding:120px 150px;background:radial-gradient(ellipse at 95% 5%,#16444a55,transparent 35%),linear-gradient(125deg,#07131e,#050b18 72%);grid-template-columns:1fr!important;align-content:center!important}.slide:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(#79e9dc15 1px,transparent 1px),linear-gradient(90deg,#79e9dc15 1px,transparent 1px);background-size:72px 72px}.slide:after{content:"";position:absolute;width:720px;height:720px;border:1px solid #56ead322;border-radius:50%;right:-160px;top:150px;box-shadow:0 0 100px #56ead311;pointer-events:none}.slide h1,.slide h2{font-family:Manrope,"Be Vietnam Pro",sans-serif;font-size:92px;font-weight:700;line-height:1.05;letter-spacing:-.055em}.slide h1{font-size:195px}.subtitle{font-size:32px;color:#56ead3}.copy{font-size:29px;line-height:1.6;color:#d0dfda}.slide.has-image{grid-template-columns:.85fr 1.15fr!important;column-gap:90px;align-content:center!important}.slide.has-image .heading{grid-column:1;grid-row:1}.slide.has-image .copy{grid-column:1;grid-row:2;align-self:start}.slide.has-image figure{grid-column:2;grid-row:1/3;margin:0;z-index:1}.slide figure{border:1px solid #c3fff328;border-radius:26px;box-shadow:0 36px 100px #0009;overflow:hidden;transform:translateY(24px) scale(.97);transition:transform .85s var(--ease),opacity .8s;opacity:0}.slide.active figure{transform:none;opacity:1}.slide img{max-height:760px;border-radius:24px}.slide.phone img{max-height:780px}.slide .heading,.slide .copy{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s var(--ease)}.slide.active .heading,.slide.active .copy{opacity:1;transform:none}.slide.cover{grid-template-columns:1.2fr .8fr!important}.slide.cover .heading{grid-column:1}.slide.cover .copy{grid-column:1}.slide.cover figure{grid-column:2;grid-row:1/3;margin:0;border:0;background:transparent;box-shadow:none}.slide.cover img{width:360px;filter:drop-shadow(0 0 48px #56ead355)}.slide.cover .heading:before{content:"CLB AI-ROBOTICS · TRỰC THUỘC DNTU";display:block;color:#56ead3;font-size:18px;letter-spacing:.2em;margin-bottom:32px}.slide.closing{text-align:center;justify-items:center}.slide.closing .heading,.slide.closing .copy{grid-column:1/-1;justify-self:center;text-align:center}.slide.roles .copy,.slide.steps .copy,.slide.architecture .copy,.slide.flow .copy{max-width:1200px;columns:2;column-gap:80px}.slide.roles .copy,.slide.steps .copy,.slide.architecture .copy{font-size:26px}.caption{color:#a9c1bf;letter-spacing:.14em;text-transform:uppercase}.deck-controls{z-index:1000;background:#06121de8;border-color:#ffffff23;backdrop-filter:blur(14px)}@media(max-width:760px){#deck{height:1080px!important;min-height:0!important}.slide,.slide.has-image,.slide.phone,.slide.cover{grid-template-columns:.85fr 1.15fr!important;padding:120px 150px!important;align-content:center!important}.slide h2{font-size:92px}.slide .copy{font-size:29px}.slide img{max-height:760px}.hint{display:none}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}}@media print{.slide{position:relative!important;opacity:1!important;visibility:visible!important;transform:none!important;break-after:page}.deck-stage{transform:none!important;height:auto!important}.deck-viewport{position:static!important}.slide .heading,.slide .copy,.slide figure{opacity:1!important;transform:none!important}}
+</style></head><body>
 <header><a class="brand" href="../"><img src="../assets/arc.png" alt="Logo ARC">ARC <span>Giới thiệu ứng dụng</span></a><nav><a href="../#downloads">Tải ARC</a><button id="overview" aria-label="Mở mục lục">Mục lục</button><button id="fullscreen" aria-label="Bật toàn màn hình">Toàn màn hình</button></nav></header>
-<main id="deck" aria-label="Bộ trình chiếu ARC"></main>
+<div class="deck-viewport"><main id="deck" class="deck-stage" aria-label="Bộ trình chiếu ARC"></main></div>
 <footer><div class="controls"><button id="prev" aria-label="Slide trước">←</button><output id="counter" aria-live="polite"></output><button id="next" aria-label="Slide tiếp">→</button></div><span class="hint">← → để chuyển · F toàn màn hình · Esc để thoát</span><div class="progress" aria-hidden="true"><span id="progress"></span></div></footer>
 <dialog id="toc"><div class="toc-head"><h2>Nội dung</h2><button id="close-toc" aria-label="Đóng mục lục">×</button></div><div id="toc-list"></div></dialog>
-<script src="slides.js" defer></script></body></html>
+<script type="application/json" id="slide-data">[
+{"title":"ARC","subtitle":"Ứng dụng nội bộ CLB AI-Robotics","body":"Trực thuộc DNTU\nHồ sơ thành viên, hoạt động và quỹ CLB trong cùng một ứng dụng.","kind":"cover","image":"../assets/arc.png"},
+{"title":"Một nơi theo dõi hoạt động CLB","subtitle":"Thành viên biết việc cần làm. BCN có dữ liệu để quản lý.","body":"Xem lịch, đăng ký hoạt động và điểm danh.\nTheo dõi quỹ theo tháng, kể cả khoản đóng bù.\nGóp ý, nhận phản hồi và đọc thông báo trong app.","kind":"statement"},
+{"title":"Quyền theo vai trò","subtitle":"Tài khoản do CLB cấp, không mở đăng ký tự do","body":"Thành viên\nXem hồ sơ, đăng ký hoạt động, đóng quỹ và gửi góp ý.\n\nBan Chủ Nhiệm\nQuản lý hoạt động và thành viên trong phạm vi được phép. Không nâng hoặc hạ quyền Admin.\n\nAdmin\nQuản lý toàn hệ thống và xem Nhật ký quản trị.","kind":"roles"},
+{"title":"Trang chủ theo tài khoản","subtitle":"Các việc cần chú ý ở ngay đầu màn hình","body":"Hoạt động sắp tới và thông báo gần đây.\nChức năng hiển thị theo vai trò.\nBốn tab chính: Trang chủ, Lịch, Điểm danh, Hồ sơ.","image":"../assets/screenshots/20261030/home-dark.png","phone":true},
+{"title":"Hồ sơ thành viên","subtitle":"Thông tin thống nhất, quyền chỉnh sửa rõ ràng","body":"Tách riêng cá nhân, học tập và liên hệ.\nBCN/Admin quản lý hồ sơ, avatar và trạng thái tài khoản.\nThành viên xem thông tin của mình và chủ động báo khi cần sửa.","image":"../assets/screenshots/20261030/student-desktop.png"},
+{"title":"Tạo tài khoản theo từng bước","subtitle":"Cá nhân, liên hệ, học tập, kiểm tra và tạo","body":"Danh mục Khoa, Ngành, Niên khóa và Lớp được thiết lập trước.\nNgành lọc theo Khoa. Lớp lọc theo Ngành và Niên khóa.\nBước cuối tổng hợp hồ sơ, có nút quay lại sửa từng phần.\nMật khẩu ban đầu theo quy tắc của hệ thống, thành viên có thể tự đổi.","kind":"steps"},
+{"title":"Lịch trên mobile và PC","subtitle":"Một nguồn dữ liệu, bố cục phù hợp màn hình","body":"Xem theo ngày, tuần hoặc tháng.\nĐăng ký sự kiện và lịch trực từ lịch.\nXem thời gian, địa điểm và tình trạng đăng ký.","image":"../assets/screenshots/20261030/calendar-desktop.png"},
+{"title":"Đăng ký lịch trực","subtitle":"BCN điều chỉnh quy mô theo từng giai đoạn","body":"Giới hạn số người trong một ca.\nThiết lập số buổi trực tối thiểu mỗi tuần.\nXem người đã đăng ký cùng lớp và khoa.\nKhóa thao tác đăng ký, hủy đối với ngày đã qua cho thành viên.","image":"../assets/screenshots/20261030/calendar-light.png","phone":true},
+{"title":"Điểm danh QR, PIN và GPS","subtitle":"Lấy vị trí điện thoại của người mở mã làm tâm","body":"Người quản lý mở QR kèm PIN 6 số, mã có thời hạn.\nCả quét QR và nhập PIN đều gửi vị trí.\nNgoài vùng vẫn ghi nhận điểm danh, tên có cảnh báo đỏ để kiểm tra lại.\nNgười được phân công có thể mở danh sách và điểm danh thủ công.","kind":"flow"},
+{"title":"Đóng quỹ theo tháng","subtitle":"Đúng hạn, đóng trễ và đóng bù đều có ngữ cảnh","body":"Hiện các tháng cần đóng, kể cả năm trước.\nTạo VietQR với số tiền theo hạn và nội dung MSSV + DONG QUY + DDMMYY.\nMinh chứng gắn với đúng tháng đang chọn.\nPhiên QR hết hạn tối đa 30 phút, hoặc sau 20 phút đóng màn hình mà không mở lại.","image":"../assets/screenshots/20261030/fund-mobile.png","phone":true},
+{"title":"Quản lý thu quỹ","subtitle":"Bảng năm giúp BCN đối soát từng thành viên","body":"Theo dõi đã đóng, đóng trễ, chưa đóng và miễn đóng trước khi gia nhập.\nCấu hình mức thu, thời hạn, ngân hàng và tài khoản nhận ngay trên giao diện.\nXem minh chứng khi đối soát. BCN/Admin cũng có phần đóng quỹ cá nhân.","image":"../assets/screenshots/20261030/fund-management.png"},
+{"title":"Excel phục vụ hồ sơ CLB","subtitle":"Chọn đúng phạm vi trước khi xuất","body":"Hồ sơ: lọc vai trò, giới tính, niên khóa, khoa, ngành, lớp. Chọn cột và khoảng dòng.\nQuỹ: chọn năm, theo dõi 12 tháng và trạng thái đóng.\nSự kiện: báo cáo theo năm, phân biệt tham gia, không tham gia và vắng sau đăng ký.\nCó xem trước khi import để kiểm tra dữ liệu trước khi ghi.","kind":"statement"},
+{"title":"Góp ý có phản hồi","subtitle":"Thành viên gửi. BCN tiếp nhận và trả lời.","body":"Góp ý tập trung trong hòm của BCN/Admin.\nThông báo dẫn đến nội dung cần xử lý.\nPhản hồi nằm cùng góp ý để theo dõi xuyên suốt.","image":"../assets/screenshots/20261030/feedback-desktop.png"},
+{"title":"Thông báo và quy định CLB","subtitle":"Nhắc đúng việc, mở đúng nơi","body":"BCN/Admin soạn thông báo và xem lịch sử đã gửi.\nChạm thông báo để đến sự kiện, quỹ hoặc góp ý liên quan.\nNhắc lịch và quỹ theo điều kiện của từng tài khoản.\nQuy định do BCN/Admin chỉnh sửa, thành viên chỉ đọc. Push phụ thuộc cấu hình nền tảng và quyền thiết bị.","image":"../assets/screenshots/20261030/notifications-mobile.png","phone":true},
+{"title":"Dashboard tổng hợp đánh giá","subtitle":"Quan sát sự kiện, quỹ và lịch trực theo năm","body":"Chỉ số tổng hợp và biểu đồ dễ đối chiếu.\nBảng chi tiết từng thành viên để xem lại dữ liệu gốc.\nSố liệu hỗ trợ BCN đánh giá, không thay quyết định của CLB.","image":"../assets/screenshots/20261030/evaluations-charts.png"},
+{"title":"QR Studio","subtitle":"Từ một đường dẫn đến mã QR có phong cách riêng","body":"Chọn màu mã và nền bằng HEX hoặc RGB.\nThêm logo, đổi kiểu chấm và góc.\nXem trước, lưu nháp, xuất PNG/SVG hoặc chia sẻ.\nẢnh được đọc lại trước khi mở nút tải. Xử lý ngay trên thiết bị.","image":"../assets/screenshots/20261030/qr-studio.png"},
+{"title":"Sử dụng trên nhiều thiết bị","subtitle":"Flutter dùng chung logic và điều chỉnh bố cục","body":"Web\nMở trực tiếp tại airoboticsclub.pages.dev.\n\nAndroid, Windows và macOS\nCó quy trình build và phát hành riêng cho từng nền tảng.\n\niPhone và iPad\nDùng ARC Web, có thể thêm vào Màn hình chính. iOS yêu cầu người dùng xác nhận thao tác cài web app.","image":"../assets/screenshots/20261030/profile-mobile.png","phone":true},
+{"title":"Kiến trúc vận hành","subtitle":"Cloudflare phía trước, API và dữ liệu trên Oracle","body":"Flutter Client\nCloudflare Pages phục vụ bản web. App native dùng cùng API HTTPS.\n\nCloudflare Worker và Tunnel\nChuyển tiếp yêu cầu đến API nội bộ, không cần mở ingress 80/443 của VPS.\n\nASP.NET 10 và PostgreSQL\nBackend xử lý phân quyền, quy tắc nghiệp vụ, ảnh và báo cáo.","kind":"architecture"},
+{"title":"Bảo trì và vận hành","subtitle":"Giảm request thừa, giữ giới hạn rõ ràng","body":"Chỉ tải và đồng bộ phạm vi màn hình đang sử dụng.\nPhân trang, debounce tìm kiếm và loại bỏ phản hồi cũ.\nGiới hạn request, ảnh tải lên và phạm vi xuất Excel.\nComponent dùng chung youth_ui, theme sáng/tối và giảm chuyển động theo cài đặt.\nBảo vệ Admin cuối cùng, thu hồi phiên sau đổi/reset mật khẩu và nhật ký thao tác.","kind":"statement"},
+{"title":"Bắt đầu với ARC","subtitle":"Tài khoản do BCN/Admin cấp cho thành viên CLB","body":"Ứng dụng web\nairoboticsclub.pages.dev\n\nTải app và xem hướng dẫn\nhyowshi.github.io/ARC-Downloads/\n\nLiên hệ hỗ trợ\nHarashiYowshi@gmail.com","kind":"closing","image":"../assets/arc.png"}
+]
+</script><script>'use strict';
+(()=>{
+const slides=JSON.parse(document.querySelector('#slide-data').textContent),deck=document.getElementById('deck'),toc=document.getElementById('toc');
+for(const [i,s] of slides.entries()){
+ const section=document.createElement('section');section.className='slide '+(s.kind||'')+(s.image?' has-image':'')+(s.phone?' phone':'');section.id='slide-'+(i+1);section.setAttribute('aria-label',`${i+1}. ${s.title}`);section.setAttribute('aria-roledescription','slide');
+ const heading=document.createElement('div');heading.className='heading';const h=document.createElement(i===0?'h1':'h2');h.textContent=s.title;const sub=document.createElement('p');sub.className='subtitle';sub.textContent=s.subtitle;heading.append(h,sub);
+ const p=document.createElement('p');p.className='copy';p.textContent=s.body;section.append(heading,p);
+ if(s.image){const figure=document.createElement('figure'),img=document.createElement('img');img.src=s.image;img.alt=s.title+' trong ARC';img.loading=i===0?'eager':'lazy';img.decoding='async';figure.append(img);section.append(figure);}
+ if(s.image&&s.kind!=='cover'&&s.kind!=='closing'){const caption=document.createElement('span');caption.className='caption';caption.textContent='Ảnh giao diện ARC thực tế · Dữ liệu minh họa · 30/10/2026';section.append(caption);}
+ deck.append(section);const button=document.createElement('button');button.type='button';button.textContent=String(i+1).padStart(2,'0')+'  '+s.title;button.onclick=()=>{toc.close();show(i)};document.getElementById('toc-list').append(button);
+}
+const pages=[...deck.children];let current=0;function show(i,update=true){current=Math.max(0,Math.min(slides.length-1,i));pages.forEach((p,n)=>{p.classList.toggle('active',n===current);p.inert=n!==current;p.setAttribute('aria-hidden',String(n!==current));if(n===current)p.scrollTop=0;});document.getElementById('counter').textContent=`${String(current+1).padStart(2,'0')} / ${slides.length}`;document.getElementById('prev').disabled=current===0;document.getElementById('next').disabled=current===slides.length-1;document.getElementById('progress').style.width=(current+1)/slides.length*100+'%';if(update)history.replaceState(null,'','#'+(current+1));document.title=slides[current].title+' · ARC';}
+function fromHash(){const n=Number(location.hash.slice(1));show(Number.isInteger(n)&&n>=1?n-1:0,false)}fromHash();addEventListener('hashchange',fromHash);
+document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current+1);document.getElementById('overview').onclick=()=>toc.showModal();document.getElementById('close-toc').onclick=()=>toc.close();
+async function full(){try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch{document.getElementById('fullscreen').textContent='Dùng chế độ trình duyệt';}}document.getElementById('fullscreen').onclick=full;
+addEventListener('keydown',e=>{if(toc.open||e.altKey||e.ctrlKey||e.metaKey||['INPUT','TEXTAREA'].includes(e.target.tagName))return;if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)}else if(['ArrowLeft','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}else if(e.key==='Home')show(0);else if(e.key==='End')show(slides.length-1);else if(e.key.toLowerCase()==='f')full();});
+let start;deck.addEventListener('touchstart',e=>{start={x:e.changedTouches[0].clientX,y:e.changedTouches[0].clientY}},{passive:true});deck.addEventListener('touchend',e=>{if(!start)return;const dx=e.changedTouches[0].clientX-start.x,dy=e.changedTouches[0].clientY-start.y;if(Math.abs(dx)>80&&Math.abs(dy)<60)show(current+(dx<0?1:-1));start=null},{passive:true});
+})();
+
+function fitStage(){const d=document.querySelector("#deck"),s=Math.min(innerWidth/1920,innerHeight/1080);d.style.transform=`translate(${(innerWidth-1920*s)/2}px,${(innerHeight-1080*s)/2}px) scale(${s})`}addEventListener("resize",fitStage);fitStage();</script></body></html>
