@@ -21,7 +21,6 @@ QR mở đúng đường dẫn tải. QR không tự cấp quyền cài đặt v
 
 ## Bộ giới thiệu ARC
 
-Mở [bộ slide tương tác](https://hyowshi.github.io/ARC-Downloads/presentation/) để xem toàn bộ chức năng, vai trò và cách vận hành. Dùng phím mũi tên, mục lục, toàn màn hình hoặc in thành PDF. Slide dùng cùng ảnh giao diện thật và ghi rõ dữ liệu minh họa.
 
 ## Cập nhật trang tải
 
