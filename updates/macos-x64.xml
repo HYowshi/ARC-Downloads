@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>ARC</title><item><title>ARC 1.0.4</title><description>- Trang chủ chào theo giờ thiết bị và chúc mừng đúng ngày sinh nhật.
+- Tìm địa điểm theo tên hoặc địa chỉ khi đặt ghim sự kiện.
+- Tương tác với biểu đồ vòng trong Tổng hợp đánh giá.
+- iPhone và iPad dùng ARC PWA tại https://airoboticsclub.pages.dev/.</description><enclosure url="https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.4/ARC-macOS.zip" length="25291743" type="application/octet-stream" sparkle:os="macos" sparkle:version="5" sparkle:shortVersionString="1.0.4" sparkle:edSignature="sjInTm1GYxbctC0X6rYpPz1SIAfPVyAdE5a7A4X0zQ4QShWyoAKiIOPzCFgvMGkC8dzRcKGnlISrf7/ms+rWCg==" /></item></channel></rss>

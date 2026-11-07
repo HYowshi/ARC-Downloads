@@ -1,31 +1,27 @@
 {
+  "tag_name": "v1.0.4",
+  "body": "- Trang chủ chào theo giờ thiết bị và chúc mừng đúng ngày sinh nhật.\n- Tìm địa điểm theo tên hoặc địa chỉ khi đặt ghim sự kiện.\n- Tương tác với biểu đồ vòng trong Tổng hợp đánh giá.\n- iPhone và iPad dùng ARC PWA tại https://airoboticsclub.pages.dev/.",
+  "published_at": "2026-11-07T07:34:56.618956+00:00",
   "assets": [
     {
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/ARC-Android-test.apk",
-      "name": "ARC-Android-test.apk",
-      "size": 80862756
+      "name": "ARC-Android.apk",
+      "size": 84495707,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.4/ARC-Android.apk"
     },
     {
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/ARC-macOS-test.zip",
-      "name": "ARC-macOS-test.zip",
-      "size": 23257346
+      "name": "ARC-Windows-Setup.exe",
+      "size": 13835710,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.4/ARC-Windows-Setup.exe"
     },
     {
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/ARC-Windows-test.zip",
-      "name": "ARC-Windows-test.zip",
-      "size": 15381996
+      "name": "ARC-macOS.zip",
+      "size": 25291743,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.4/ARC-macOS.zip"
     },
     {
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/RELEASE-NOTES.txt",
-      "name": "RELEASE-NOTES.txt",
-      "size": 700
-    },
-    {
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.3-test.1/SHA256SUMS.txt",
       "name": "SHA256SUMS.txt",
-      "size": 262
+      "size": 253,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.4/SHA256SUMS.txt"
     }
-  ],
-  "published_at": "2026-10-29T23:49:00Z",
-  "tag_name": "v1.0.3-test.1"
+  ]
 }

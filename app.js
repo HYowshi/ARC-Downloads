@@ -61,7 +61,8 @@ function render(release, qrManifest) {
     : "Chưa tải được danh sách. Kiểm tra tại mục Releases.";
   for (const [name, file, note] of platforms) {
     const card = el("article", "", "card");
-    const asset = file && release?.assets.find((x) => x.name === file);
+    const updaterFiles = {Android: "ARC-Android.apk", Windows: "ARC-Windows-Setup.exe", macOS: "ARC-macOS.zip"};
+    const asset = file && (release?.assets.find((x) => x.name === updaterFiles[name]) ?? release?.assets.find((x) => x.name === file));
     const platformIcon = el("div", "", "platform-icon " + name.toLowerCase());
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("aria-hidden", "true");
@@ -77,9 +78,12 @@ function render(release, qrManifest) {
       platformIcon,
       el("span", asset ? "BẢN THỬ NGHIỆM" : "CHƯA PHÁT HÀNH", "badge"),
       el("h3", name),
-      el("p", note, "note"),
+      el("p", asset?.name === "ARC-Windows-Setup.exe" ? "Bộ cài ARC, hỗ trợ cập nhật ngay trong ứng dụng." : note, "note"),
     );
-    const details = platformDetails[name];
+    const details = asset?.name === "ARC-Windows-Setup.exe" ? {
+      specs: ["Windows 10/11 · x64", "Cài cho tài khoản Windows hiện tại"],
+      steps: ["Chạy bộ cài ARC và hoàn tất hướng dẫn.", "Mở ARC từ Desktop hoặc Start Menu.", "Các lần sau, kiểm tra cập nhật ngay trong Hồ sơ của ARC."]
+    } : platformDetails[name];
     const specs = el("ul", "", "platform-specs");
     details.specs.forEach((text) => specs.append(el("li", text)));
     card.append(specs);
