@@ -1,5 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>ARC</title><item><title>ARC 1.0.4</title><description>- Trang chủ chào theo giờ thiết bị và chúc mừng đúng ngày sinh nhật.
-- Tìm địa điểm theo tên hoặc địa chỉ khi đặt ghim sự kiện.
-- Tương tác với biểu đồ vòng trong Tổng hợp đánh giá.
-- iPhone và iPad dùng ARC PWA tại https://airoboticsclub.pages.dev/.</description><enclosure url="https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.4/ARC-Windows-Setup.exe" length="13835710" type="application/octet-stream" sparkle:os="windows" sparkle:version="1.0.4+5" sparkle:shortVersionString="1.0.4" sparkle:dsaSignature="MD4CHQCQRpVZtfC1+jVoChcl2mJhxZTPSX6gw481JDjDAh0A1DBy2o+9Iz81RqqsNQEUfMu+UXHm37V2ZIHgHw==" /></item></channel></rss>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>ARC</title><item><title>ARC 1.0.5</title><description>- Trang chủ tải dữ liệu bằng một yêu cầu và đồng bộ theo phần thay đổi.
+- Lịch dùng lại các ngày đã tải. Hồ sơ và ảnh đại diện làm mới theo đúng tài khoản.
+- Điểm danh kiểm tra đúng sự kiện hoặc ca trực và tra lại kết quả khi mất phản hồi.
+- iPhone và iPad tiếp tục sử dụng ARC PWA tại https://airoboticsclub.pages.dev/.
+</description><enclosure url="https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.5/ARC-Windows-Setup.exe" length="13847169" type="application/octet-stream" sparkle:os="windows" sparkle:version="1.0.5+6" sparkle:shortVersionString="1.0.5" sparkle:dsaSignature="MDwCHBZjSSmflxCyy/DhHai9NPID6SU2/Uwh73ALY8ACHDYfspux9R6fojZvSc22kf7ouvWg5HNKhg4dv+4=" /></item></channel></rss>
