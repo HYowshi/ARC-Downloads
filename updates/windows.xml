@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>ARC</title><item><title>ARC 1.0.5</title><description>- Trang chủ tải dữ liệu bằng một yêu cầu và đồng bộ theo phần thay đổi.
-- Lịch dùng lại các ngày đã tải. Hồ sơ và ảnh đại diện làm mới theo đúng tài khoản.
-- Điểm danh kiểm tra đúng sự kiện hoặc ca trực và tra lại kết quả khi mất phản hồi.
-- iPhone và iPad tiếp tục sử dụng ARC PWA tại https://airoboticsclub.pages.dev/.
-</description><enclosure url="https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.5/ARC-Windows-Setup.exe" length="13847169" type="application/octet-stream" sparkle:os="windows" sparkle:version="1.0.5+6" sparkle:shortVersionString="1.0.5" sparkle:dsaSignature="MDwCHBZjSSmflxCyy/DhHai9NPID6SU2/Uwh73ALY8ACHDYfspux9R6fojZvSc22kf7ouvWg5HNKhg4dv+4=" /></item></channel></rss>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>ARC</title><item><title>ARC 1.0.6</title><description>- Thêm quản lý ảnh quảng bá màn hình đăng nhập.
+- Xem trước và căn khung ảnh riêng cho máy tính và điện thoại.
+- Ảnh giữ đủ 5 giây rồi chuyển mờ nhẹ sang ảnh tiếp theo.
+- iPhone và iPad sử dụng ARC PWA tại https://airoboticsclub.pages.dev/.
+</description><enclosure url="https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.6/ARC-Windows-Setup.exe" length="13861199" type="application/octet-stream" sparkle:os="windows" sparkle:version="1.0.6+7" sparkle:shortVersionString="1.0.6" sparkle:dsaSignature="MD4CHQC9hGmubBSVZxZCA06S/PxYyMDvzd0zUW9ePmstAh0AmeXM7u3K+k2jbIDGz++ZXxeEovt/R9XpTQzl8Q==" /></item></channel></rss>

@@ -1,27 +1,27 @@
 {
-  "tag_name": "v1.0.5",
-  "body": "- Trang chủ tải dữ liệu bằng một yêu cầu và đồng bộ theo phần thay đổi.\n- Lịch dùng lại các ngày đã tải. Hồ sơ và ảnh đại diện làm mới theo đúng tài khoản.\n- Điểm danh kiểm tra đúng sự kiện hoặc ca trực và tra lại kết quả khi mất phản hồi.\n- iPhone và iPad tiếp tục sử dụng ARC PWA tại https://airoboticsclub.pages.dev/.\n",
-  "published_at": "2026-11-08T07:25:37.381726+00:00",
+  "tag_name": "v1.0.6",
+  "body": "- Thêm quản lý ảnh quảng bá màn hình đăng nhập.\n- Xem trước và căn khung ảnh riêng cho máy tính và điện thoại.\n- Ảnh giữ đủ 5 giây rồi chuyển mờ nhẹ sang ảnh tiếp theo.\n- iPhone và iPad sử dụng ARC PWA tại https://airoboticsclub.pages.dev/.\n",
+  "published_at": "2026-11-08T08:42:03.404050+00:00",
   "assets": [
     {
       "name": "ARC-Android.apk",
-      "size": 84807235,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.5/ARC-Android.apk"
+      "size": 84987823,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.6/ARC-Android.apk"
     },
     {
       "name": "ARC-Windows-Setup.exe",
-      "size": 13847169,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.5/ARC-Windows-Setup.exe"
+      "size": 13861199,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.6/ARC-Windows-Setup.exe"
     },
     {
       "name": "ARC-macOS.zip",
-      "size": 25329544,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.5/ARC-macOS.zip"
+      "size": 25362494,
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.6/ARC-macOS.zip"
     },
     {
       "name": "SHA256SUMS.txt",
       "size": 253,
-      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.5/SHA256SUMS.txt"
+      "browser_download_url": "https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.6/SHA256SUMS.txt"
     }
   ]
 }
