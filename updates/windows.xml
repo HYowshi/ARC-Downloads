@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>ARC</title><item><title>ARC 1.0.6</title><description>- Thêm quản lý ảnh quảng bá màn hình đăng nhập.
-- Xem trước và căn khung ảnh riêng cho máy tính và điện thoại.
-- Ảnh giữ đủ 5 giây rồi chuyển mờ nhẹ sang ảnh tiếp theo.
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0"><channel><title>ARC</title><item><title>ARC 1.0.0</title><description>- Lịch có bộ chọn năm, tuần và tháng gọn hơn.
+- Các ngày có lịch được đánh dấu. Chọn một ngày để xem riêng sự kiện và ca trực của ngày đó.
+- Đổi giao diện sáng/tối ngay. Website báo khi phát hiện bản web mới.
 - iPhone và iPad sử dụng ARC PWA tại https://airoboticsclub.pages.dev/.
-</description><enclosure url="https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.6/ARC-Windows-Setup.exe" length="13861199" type="application/octet-stream" sparkle:os="windows" sparkle:version="1.0.6+7" sparkle:shortVersionString="1.0.6" sparkle:dsaSignature="MD4CHQC9hGmubBSVZxZCA06S/PxYyMDvzd0zUW9ePmstAh0AmeXM7u3K+k2jbIDGz++ZXxeEovt/R9XpTQzl8Q==" /></item></channel></rss>
+</description><enclosure url="https://github.com/HYowshi/ARC-Downloads/releases/download/v1.0.0/ARC-Windows-Setup.exe" length="13869400" type="application/octet-stream" sparkle:os="windows" sparkle:version="1.0.0+9" sparkle:shortVersionString="1.0.0" sparkle:dsaSignature="MD0CHQDL/eDNuHuRfThQUH1Dc6KdwwUyOPPIAFrvqFhLAhxn7DKCS2oYrslZNDz3/nSH8NmsC1MXUNbtIjUS" /></item></channel></rss>
